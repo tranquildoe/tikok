@@ -3,16 +3,17 @@ const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
   name: String,
+  isTemplate: Boolean,
   ref: String,
   price: Number,
   quantity: Number,
   description : String,
-  type:String, /// necessary to put it here again ?
+  type:String,
   category: {
       type: String,
       enum : ["fruits", "vegetables", "fishes & seafood", "meats", "artisan goods", "growcery", "other"]
   },
-likes :Number,
+  likes :Number,
   image: {
       type: String,
       default : "https://res.cloudinary.com/dyvosdvps/image/upload/v1581285962/tikok-pictures/photo_coq_e69qys.jpg"

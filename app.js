@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("./config/mongodb");
+const mongoose = require("mongoose");
 
 var createError = require('http-errors');
 var express = require('express');
@@ -11,7 +12,7 @@ var indexRouter = require('./routes/index');
 var custRouter = require('./routes/customers');
 var adminRouter = require('./routes/admin');
 var authRouter = require('./routes/auth');
-var shopRouter = require('./routes/shop');
+var shopRouter = require('./routes/myShop');
 
 var app = express();
 
@@ -29,7 +30,7 @@ app.use('/', indexRouter);
 app.use('/shopping', custRouter);
 app.use('/admin', adminRouter);
 app.use('/auth', authRouter);
-app.use('/shop', shopRouter);
+app.use('/myshop', shopRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

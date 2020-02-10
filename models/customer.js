@@ -13,17 +13,14 @@ const customerSchema = new Schema({
   phone:String , // ?? string ? or number or other ?
   password: String,
   location :{type: { type: String }, coordinates: [Number] }, // Synthax for Google map coordonates
-  baskets : [
-      {store_id: Schema.Types.ObjectId,
-       list : [{ref: String, // or product : Schema.Types.ObjectId
-                quantity: Number}],
-      creation_date: Date} // 
-  ],
   orders : {
+    baskets : [Schema.Types.ObjectId],
     active_orders : [Schema.Types.ObjectId],
     past_orders : [Schema.Types.ObjectId]
   }
 });
+
+customerSchema.index({location: '2dsphere'}); // for Google location
 
 const customerModel = mongoose.model("Customer", customerSchema);
 

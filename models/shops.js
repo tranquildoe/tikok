@@ -1,37 +1,34 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema; // adding reg ex for contact field
 
-const customerSchema = new Schema({
-  username: {
+const shopSchema = new Schema({
+  name: {
       type: String,
       required : true
     },
   email: {
       type : String, // add reg ex
-      unique : true
     },
   phone:String , // ?? string ? or number or other ?
-  password: String,
+  address: String,
   location : {type: { type: String }, coordinates: [Number] },// Synthax for Google map coordonates
-  baskets : [
-      {store_id: Schema.Types.ObjectId,
-       list : [{ref: String, // or product : Schema.Types.ObjectId
-                quantity: Number}],
-      creation_date: Date} // 
-  ],
   orders : {
-    active_orders : [{
-        ref : String,
-        store_id : Schema.Types.ObjectId,
-        list : [{ref: String, // or product : Schema.Types.ObjectId
-            quantity: Number}],
-        order_date : Date,
-        status: String
-    }]
+    active_orders : [Schema.Types.ObjectId],
+    past_orders : [Schema.Types.ObjectId]
+    },
+  likes: Number,
+  status: {
+    enum : [finalized, online, closed]
+  },
+  visibility: {
+    enum : [visible, hidden]
+  },
+  control: {
+    enum : [unseen, checked, blocked]
   }
 });
 
-customerSchema.index({location: '2dsphere'});
-const customerModel = mongoose.model("Customer", customerSchema);
+shopSchema.index({location: '2dsphere'});
+const shopModel = mongoose.model("Shop", shopSchema);
 
-module.exports = customerModel;
+module.exports = shopModel;
