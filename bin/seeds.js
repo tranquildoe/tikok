@@ -85,3 +85,4 @@ productModel.insertMany(someProductsTemplates)
 .catch(err => console.log(err));
 
 
+module.exports = someProductsTemplates;

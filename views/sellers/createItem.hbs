@@ -1,0 +1,41 @@
+<div class="big-container product-manage-wrapper flexed-item">
+  <form action="/myshop/createItem" method="post" class="add-product-form" enctype="multiparty/form-data">
+
+<div class="imageToUpload">
+<button class="add-picture" ><input type='file' onchange="readURL(this);" class="input-image"/></button>
+</div>
+
+
+    <h3 class="form-title">Create an Item</h3>
+    <div class="form-item-wrapper flexed-item">
+      <label for="category" name="category" class="label-name label">Category</label>
+      <select name="Products" id="Products" class="select">
+
+    <option value="-1" disabled selected>Choose a category</option>
+    <option value="Fruits" name="category">Fruits</option>
+    <option value="Vegetables" name="cagetory">Vegetables</option>
+    <option value="Fishes and Seafood" name="category">Fishes and Seafood</option>
+    <option value="Meats" name="category">Meats</option>
+    <option value="Artisan Goods" name="category">Artisan Goods</option>
+    <option value="Growcery" name="category">Growcery</option>
+    <option value="Other" name="category">Other</option>
+
+</select>
+
+    </div>
+    <div class="form-item-wrapper flexed-item">
+      <label for="name" class="label-ref label">name</label>
+      <input id="name" name='name' type="text" class="input-text input" placeholder="ex: NV23498">
+    </div>
+    <div class="form-item-wrapper flexed-item">
+      <label for="product-price" class="label-price label">Price</label>
+      <input id="product-price" name="price" type="number" class="sneacker-price input" min="1">
+    </div>
+    <div class="form-item-wrapper flexed-item">
+      <label for="product-descr" class="label-descr label">Description</label>
+      <input id="product-descr" name="description" type="text" class="input-text input"
+        placeholder="balaou balaou balaou">
+    </div>
+
+    <button class="button-primary add-product-btn">Add to collection</button>
+  </form>

@@ -6,3 +6,19 @@ body {
 a {
   color: #00B7FF;
 }
+
+.add-picture {
+  width: 20vh;
+  height: 20vh;
+  background-image: url(../decouvrir-fruits-tropicaux-martinique.jpg);
+}
+
+.input-image {
+    width: 20vh;
+    height: 20vh;
+    opacity: 0;
+  }
+
+.input-image:checked + div {
+    background: #000
+}
