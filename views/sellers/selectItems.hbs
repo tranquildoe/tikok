@@ -1,0 +1,13 @@
+<form action="/my-shop/select-items" method="post">
+<label> <h2>Wich Product are you selling ?</h2></label>
+<select name="list-products" id="list-products">
+<div class="grid-container">
+    {{#each items}}
+    <option class="image-container" value="{{this.name}}">
+        <img class="image" alt="{{this.name}}" src="{{this.image}}">
+        <h3>{{this.name}}</h3>
+    </option>
+    {{/each}}
+</div>
+<button type="submit" id="submit-select">Validate</button>
+</form>
