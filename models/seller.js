@@ -14,7 +14,7 @@ const sellerSchema = new Schema({
   phone:String , // ?? string ? or number or other ?
   role : {
       type: String,
-      enum : [administrator, collaborator]
+      enum : ["administrator", "collaborator"]
   },
   image: {
       type: String,
