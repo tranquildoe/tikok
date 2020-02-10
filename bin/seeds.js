@@ -8,7 +8,7 @@ const someProductsTemplates = [
     ref: "to defined",
     price: 0,
     quantity: 0,
-    description : "Quelles sont belle smes bananes jaunes !",
+    description : "Quelles sont belles mes bananes jaunes !",
     type: "banana",
     category: "vegetables",
     likes :0,
@@ -82,4 +82,6 @@ const someProductsTemplates = [
   
 productModel.insertMany(someProductsTemplates)
 .then(res => console.log("ok db inserted"))
-.catch(err => console.log(err))
+.catch(err => console.log(err));
+
+
