@@ -46,7 +46,7 @@ router.post("/signup", (req, res, next) => {
                 if (dbRes) return res.redirect("/signup"); //
 
                 shopModel
-                    .create(user)
+                    .create({name:user.name)
                     .then(() => res.redirect("/signin"))
 
                 // .catch(dbErr => console.log(dbErr));
