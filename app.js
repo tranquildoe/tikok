@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("./config/mongodb");
+const mongoose = require("mongoose");
 
 var createError = require('http-errors');
 var express = require('express');
@@ -11,7 +12,7 @@ var indexRouter = require('./routes/index');
 var custRouter = require('./routes/customers');
 var adminRouter = require('./routes/admin');
 var authRouter = require('./routes/auth');
-var shopRouter = require('./routes/shop');
+var shopRouter = require('./routes/myShop');
 
 var app = express();
 
