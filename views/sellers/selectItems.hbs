@@ -1,8 +1,8 @@
-<form action="/my-shop/select-items" method="post">
+<form action="/myshop/select-items" method="post">
 <div class="grid-container">
 {{#each templates}}
 <div class="image-container">
-<input type="checkbox" id={{this.name}} value="{{this.name}}" />
+<input type="checkbox" id={{this.name}} name={{this.name}} value={{this.name}} />
 <label class="image-container" for={{this.name}}><img class="label-image" src="{{this.image}}" width="100"></label>
 </div>
 {{/each}}
