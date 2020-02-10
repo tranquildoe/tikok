@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
   name: String,
+  id_store: Schema.Types.ObjectId,
   isTemplate: Boolean,
   ref: String,
   price: Number,
