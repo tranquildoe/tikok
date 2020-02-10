@@ -1,0 +1,15 @@
+/* .grid-container input[type="checkbox"] {
+	display:none;
+} */
+
+.grid-container {
+display: flex;
+flex-wrap: wrap;
+}
+
+/* .label-image {
+    width: 10vh;
+} */
+/* .label-image {
+    width: 7em;
+} */

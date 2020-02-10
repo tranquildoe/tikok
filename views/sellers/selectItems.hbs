@@ -1,13 +1,17 @@
 <form action="/my-shop/select-items" method="post">
-<label> <h2>Wich Product are you selling ?</h2></label>
-<select name="list-products" id="list-products">
 <div class="grid-container">
-    {{#each items}}
-    <option class="image-container" value="{{this.name}}">
-        <img class="image" alt="{{this.name}}" src="{{this.image}}">
-        <h3>{{this.name}}</h3>
-    </option>
-    {{/each}}
+{{#each templates}}
+<div class="image-container">
+<input type="checkbox" id={{this.name}} value="{{this.name}}" />
+<label class="image-container" for={{this.name}}><img class="label-image" src="{{this.image}}" width="100"></label>
 </div>
-<button type="submit" id="submit-select">Validate</button>
+{{/each}}
+</div>
+<button type="submit">Submit</button>
 </form>
+
+{{!-- {{#each templates}}
+<div><img class="image" alt="{{this.name}}" src="{{this.image}}">
+<h3>{{this.name}}</h3>
+</div>
+{{/each}} --}}
