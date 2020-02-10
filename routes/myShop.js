@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+<<<<<<< HEAD
 const sellerModel = require("../models/seller");
 const shopModel = require("../models/shop");
 const bcrypt = require("bcrypt");
@@ -7,6 +8,21 @@ const bcrypt = require("bcrypt");
 router.get("/signup", (req, res) => {
     res.render("sellers/signup");
 });
+=======
+const productModel = require("../models/product")
+
+// Get all the products for Shelves
+
+router.get('/myshelves'), (req, res, next) => {
+    productModel.find()
+        .then(dbRes => {
+            // Put all data into an obj called products:
+            res.render('sellers/myShelves',{products: dbRes});
+            console.log(dbRes);  
+        })
+        .catch(next)
+};
+>>>>>>> 8fa441ea7e2eb6f730e65e158842910db329b9e4
 
 
 
