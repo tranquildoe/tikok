@@ -29,7 +29,7 @@ app.use('/', indexRouter);
 app.use('/shopping', custRouter);
 app.use('/admin', adminRouter);
 app.use('/auth', authRouter);
-app.use('/shop', shopRouter);
+app.use('/myshop', shopRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -46,5 +46,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
