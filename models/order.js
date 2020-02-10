@@ -10,7 +10,7 @@ list_products: [{product_id :Schema.Types.ObjectId,
 creation_date : Date,
 status: {
     type: String,
-    enum : [basket, entered, confirmed, completed, archived] // entered = valider
+    enum : ["basket", "entered", "confirmed", "completed", "archived"] // entered = valider
 },
 });
 

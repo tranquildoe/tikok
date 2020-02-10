@@ -1,6 +1,16 @@
 var express = require('express');
 var router = express.Router();
 <<<<<<< HEAD
+const mongoose = require("mongoose");
+const productModel = require("../models/product");
+
+router.get('/select-items', function(req, res, next) {
+    productModel.find({isTemplate : true})
+    .then(templates => res.render('sellers/selectItems', {templates, css: ["select-items"]}))
+  });
+  
+=======
+<<<<<<< HEAD
 const sellerModel = require("../models/seller");
 const shopModel = require("../models/shop");
 const bcrypt = require("bcrypt");
@@ -10,6 +20,7 @@ router.get("/signup", (req, res) => {
 });
 =======
 const productModel = require("../models/product")
+>>>>>>> 5a9475943ca7a71e14d063e165065cfe97268e74
 
 // Get all the products for Shelves
 
@@ -28,49 +39,61 @@ router.get('/myshelves'), (req, res, next) => {
 
 
 router.post("/signup", (req, res, next) => {
-    const user = req.body;
+    const newSeller = {username :req.body.username, email: req.body.email, password:req.body.password}
+    const newShop = {name :req.body.name}
+    
 
     // if (req.file) user.avatar = req.file.secure_url;
-
-    if (!user.name /* || !user.username || !user.email || !user.password*/) {
-        res.redirect("/myshop/signup");
+    shopModel 
+    if (!newSeller.username  || !newSeller.username || !user.email || !user.password) {
+        res.redirect("/myshop/signup"); // flash
         return;
 
     } else {
 
         shopModel
             .findOne({
-                name: user.name,
+                name: newShop.name,
             })
             .then(dbRes => {
+<<<<<<< HEAD
                 if (dbRes) return res.redirect("/signup"); //
 
                 shopModel
                     .create({name:user.name)
                     .then(() => res.redirect("/signin"))
+=======
+                if (dbRes) {return res.redirect("/signup")} //flash
+                else {
+                    shopModel
+                    .create(newShop)
+                    .then(() => res.redirect("/login"))
+                }
+                
+>>>>>>> 042457198cbdc7fc7192101807a3a3c38a9f6c5f
 
                 // .catch(dbErr => console.log(dbErr));
             })
             .catch(next);
         }
 
-        // sellerModel
-        // .findOne({
-        //     email: user.email,
-        // })
-        // .then(dbRes => {
-        //     if (dbRes) return res.redirect("/signup");
+        sellerModel
+        .findOne({
+            email: user.email,
+        })
+        .then(dbRes => {
+            if (dbRes) return res.redirect("/signup");
 
-        //     const salt = bcrypt.genSaltSync(10); // https://en.wikipedia.org/wiki/Salt_(cryptography)
-        //     const hashed = bcrypt.hashSync(user.password, salt); // generates a secured random hashed password
-        //     user.password = hashed; // new user is ready for db
+            const salt = bcrypt.genSaltSync(10); // https://en.wikipedia.org/wiki/Salt_(cryptography)
+            const hashed = bcrypt.hashSync(user.password, salt); // generates a secured random hashed password
+            user.password = hashed; // new user is ready for db
 
-        //     sellerModel
-        //         .create(user)
-        //         .then(() => res.redirect("/signin"))
+            sellerModel
+                .create(user)
+                .then(() => res.redirect("/signin"))
 
-        // })
-        // .catch(next);
+        })
+        .catch(next);
 })
 
 
