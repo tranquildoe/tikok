@@ -18,13 +18,13 @@ const shopSchema = new Schema({
     },
   likes: Number,
   status: {
-    enum : [finalized, online, closed]
+    enum : ["finalized", "online", "closed"]
   },
   visibility: {
-    enum : [visible, hidden]
+    enum : ["visible", "hidden"]
   },
   control: {
-    enum : [unseen, checked, blocked]
+    enum : ["unseen", "checked", "blocked"]
   }
 });
 
