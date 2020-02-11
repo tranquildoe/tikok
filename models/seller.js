@@ -16,7 +16,6 @@ const sellerSchema = new Schema({
       type: String,
       enum : ["administrator", "collaborator"]
   },
-  list_products: [Schema.Types.ObjectId],
   image: {
       type: String,
       default : "https://res.cloudinary.com/dyvosdvps/image/upload/v1581285962/tikok-pictures/photo_coq_e69qys.jpg"

@@ -13,6 +13,7 @@ const shopSchema = new Schema({
   phone:String , // ?? string ? or number or other ?
   address: String,
   location : {type: { type: String }, coordinates: [Number] },// Synthax for Google map coordonates
+  list_products: [{type:Schema.Types.ObjectId,ref: 'Products'}],
   orders : {
     active_orders : [Schema.Types.ObjectId],
     past_orders : [Schema.Types.ObjectId]

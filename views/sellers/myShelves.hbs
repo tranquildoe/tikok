@@ -1,1 +1,17 @@
-<p>lol</p>
+
+
+<div class="grid-container">
+{{#each items.list_products}}
+<div class="block">
+    <img class="product-image"alt={{this.name}} src={{this.image}} width="300">
+    <div class="infos-placeholder">
+    <div>Item :{{this.name}}</div>
+    <div>Description :{{this.description}}</div>
+    <div>Price :{{this.price}}</div>
+    <div>Quantity : {{this.quantity}}</div>
+    <div>Reference : {{this.ref}}</div>
+    </div>
+    <div></div>
+</div>
+{{/each}}
+</div>

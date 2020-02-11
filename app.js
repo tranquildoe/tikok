@@ -59,7 +59,7 @@ app.use(function(err, req, res, next) {
   res.render("error");
 });
 
-app.use(checkloginStatus);
+// app.use(checkloginStatus);
 
 
 module.exports = app;

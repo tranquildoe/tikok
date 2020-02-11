@@ -57,7 +57,7 @@ router.post("/myshop/signup", (req, res, next) => {
           shopModel.create(newShop),
           sellerModel.create(newSeller)
         ]).then(dbRes => {
-          res.redirect(`/myshop/createShop/${dbRes[0].id}`);
+          res.redirect(`/myshop/create-shop/${dbRes[0].id}`);
         });
       })
       .catch(next);

@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
   name: String,
-  id_store: Schema.Types.ObjectId,
+  id_shop: {
+    type:Schema.Types.ObjectId,
+    ref: 'Shop'
+  },
   isTemplate: Boolean,
   ref: String,
   price: Number,
