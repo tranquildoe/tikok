@@ -5,6 +5,7 @@ const sellerModel = require("../models/seller");
 const shopModel = require("../models/shop");
 const bcrypt = require("bcrypt");
 
+
 //sign up
 
 router.get("/myshop/signup", (req, res) => {
@@ -29,7 +30,8 @@ router.post("/myshop/signup", (req, res, next) => {
     !newSeller.email ||
     !newSeller.password
   ) {
-    res.redirect("/myshop/signup"); // flash
+    req.flash("error", "Please fill the inputs");
+    res.redirect("/myshop/signup")
     return;
   } else {
     Promise.all([
@@ -42,23 +44,23 @@ router.post("/myshop/signup", (req, res, next) => {
     ])
       .then(dbRes => {
         if (dbRes[0]) {
-          console.log("nom déjà pris");
+          req.flash("error", "This name already exists");
           return res.redirect("/myshop/signup");
-        } //flash : ce nom est déjà pris
+        } 
         if (dbRes[1]) {
-          console.log(" a déjà un email");
+          req.flash("error", "This email already exists");
           return res.redirect("/myshop/signup");
-        } //flash : cet email est déjà affilié à une boutique => pour qu'il se login
+        } 
 
         const salt = bcrypt.genSaltSync(10); // https://en.wikipedia.org/wiki/Salt_(cryptography)
         const hashed = bcrypt.hashSync(newSeller.password, salt); // generates a secured random hashed password
         newSeller.password = hashed; // new user is ready for db
-        Promise.all([
-          shopModel.create(newShop),
-          sellerModel.create(newSeller)
-        ]).then(dbRes => {
-          res.redirect(`/myshop/create-shop/${dbRes[0].id}`);
-        });
+        shopModel.create(newShop)
+          .then(shop => {
+            newSeller.shop_id = shop.id
+            sellerModel.create(newSeller)
+              .then(dbRes => res.redirect(`/myshop/create-shop/${dbRes.shop_id}`))
+          })
       })
       .catch(next);
   }
@@ -73,32 +75,34 @@ router.get("/myshop/login", (req, res) => {
 router.post("/myshop/login", (req, res, next) => {
   const seller = req.body;
   if (!seller.email || !seller.password) {
-    // req.flash("error", "wrong credentials");
+    req.flash("error", "wrong credentials");
     return res.redirect("/myshop/login");
   } else {
     sellerModel
       .findOne({ email: seller.email })
       .then(dbRes => {
         if (!dbRes) {
-          // req.flash("error", "wrong credentials");
-          console.log("va te sign up");
+          req.flash("error", "wrong credentials");
           return res.redirect("/myshop/login");
+         
         }
         if (bcrypt.compareSync(seller.password, dbRes.password)) {
           const { _doc: clone } = { ...dbRes };
           delete clone.password;
           console.log(req.session)
           req.session.currentUser = clone;
-          // req.flash("success", "access granted")
-          return res.redirect("/myshop/login");
+          req.flash("success", "access garanted")
+          return res.redirect(`/myshop/dashboard/${dbRes.shop_id}`);
         } else {
-          // req.flash("error", "wrong credentials");
-          console.log("mauvais mdp");
-          return res.redirect("/auth/login");
+          req.flash("error", "wrong credentials");
+          return res.redirect("/myshop/login");
         }
       })
       .catch(err => console.log(err));
   }
 });
+
+
+
 
 module.exports = router;

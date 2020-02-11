@@ -29,3 +29,70 @@ a {
 .input-image:checked + div {
     background: #000
 }
+
+/* Flash messages */
+.success {
+  width: 20vh;
+  height: 5vh;
+  border: solid 1px black;
+  background-color: green;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Flash messages */
+.error {
+  width: 20vh;
+  height: 5vh;
+  border: solid 1px black;
+  background-color: #f08080;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dash {
+  height: 40vw;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 20vh;
+}
+
+.avatar {
+  width: 20vh;
+  height: 20vh;
+}
+
+.titleandimage {
+  display: flex;
+}
+
+.shelvesandorders {
+  width: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gotomy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px;
+  border-radius: 30px;
+  width: 40vh;
+  height: 20vh;
+  background-color:rgba(255,99,71,0.5);
+  font-size: 20px;
+}
+
+
+
+
