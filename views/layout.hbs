@@ -2,9 +2,19 @@
 <html>
   <head>
     <title>{{title}}</title>
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.1/css/all.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     {{#each css}}
     <link rel='stylesheet' href='/stylesheets/{{this}}.css'/>
+    {{/each}}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="/javascripts/createShop.js"></script>
+    {{#each scripts}}
+    <script type="module" src='/javascripts/{{this}}.js'></script>
     {{/each}}
   </head>
   <body>

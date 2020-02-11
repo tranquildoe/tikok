@@ -6,6 +6,7 @@ const shopSchema = new Schema({
       type: String,
       required : true
     },
+  type: String,
   email: {
       type : String, // add reg ex
     },
@@ -25,7 +26,11 @@ const shopSchema = new Schema({
   },
   control: {
     enum : ["unseen", "checked", "blocked"]
-  }
+  },
+  image: {
+    type: String,
+    default : "https://res.cloudinary.com/dyvosdvps/image/upload/v1581285962/tikok-pictures/photo_coq_e69qys.jpg"
+}
 });
 
 shopSchema.index({location: '2dsphere'});

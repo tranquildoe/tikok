@@ -1,0 +1,155 @@
+h1 {
+    color: rgb(197, 58, 7);
+    font-size: 7vh;
+}
+h2 {
+    color: rgb(197, 58, 7);
+    font-size: 4vh;
+}
+h3 {
+    color: grey;
+    margin: 2vh
+}
+.body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin : 5vh 0;
+}
+#first-container {
+    position: relative;
+    z-index: 1;
+    background-color: tomato;
+    border-radius: 50px;
+    width: 60%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+#form-create-shop {
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4%;
+    width: 100%;
+    height: 100%;
+}
+.image-upload {
+    position: relative;
+}
+#product-image {
+    border-radius: .5em;
+}
+#product-image:hover {
+    filter: blur(2px)
+}
+
+.circle-add-image {
+    position: absolute;
+    left: calc(50% - 5vh);
+    top: calc(50% - 5vh);
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 10vh;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.circle-add-image .fa-plus {
+    font-size: 4vh ;
+    color: white;
+}
+
+.input {
+    height: .1rem;
+    border-radius: 30px;
+    border : 2px solid white;
+    background-color: tomato;
+    width: 20em;
+    padding: 4%;
+    color: white;
+}
+
+.input-container{
+    width: 100%;
+    height: min-content;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+}
+label {
+    margin-right: 2%;
+    font-size: 3vh;
+}
+
+.input::placeholder {
+    color: white;
+    font-size: 2vh;
+}
+
+#select{
+    height: 7vh;
+}
+
+select option {
+    font-size: 2vh;
+}
+
+#submit-button {
+    border-radius: 50px;
+    height: 9vh;
+    color: tomato;
+    font-size: 3vh;
+    padding: 2%;
+    margin-top: 2%;
+}
+
+#shelves-placeholder {
+    position: relative;
+    border-radius: 40px;
+    /* border: 2px solid grey; */
+    background-color: rgba(255, 218, 185, 0.842);
+    width : 80%;
+    height : 60vh;
+    margin-top: -10vh;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#shelves-placeholder > * {
+    margin: 1vh;
+}
+
+
+.circle {
+    border-radius: 50%;
+    width: 15vh;
+    height: 15vh;
+    background-color: rgba(255, 255, 255, 0.609);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle:hover {
+    background-color: white;
+}
+
+.circle .fa-plus {
+    font-size: 6vh ;
+    color: rgb(197, 58, 7);
+}
+
+

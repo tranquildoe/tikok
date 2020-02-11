@@ -1,18 +1,48 @@
-<h1>{{shop.name}}</h1>
+<div class="body-container">
+  <h1>{{shop.name}}</h1>
+  <h3>Your shop online</h3>
+  <div id="first-container">
+    <div id="form-create-shop" data-shop-id="{{shop.id}}">
+      <div class="image-upload">
+        <label for="file-input">
+          <img id="product-image" src={{shop.image}} width="200">
+          <div class="circle-add-image">
+            <i class="fas fa-plus"></i>
+          </div>
+        </label>
+        <input class="input" id="file-input" type="file" />
+      </div>
+      <div class='input-container'>
+        <label for="type">Shop Type</label>
+        <select id="select" class="input" id="type" name="type">
+          <option value="Farmer">Farmer</option>
+          <option value="Fisher">Fisher</option>
+          <option value="Artisan">Artisan</option>
+          <option value="Growcery">Growcery</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class='input-container'>
+        <label for="description">Description</label>
+        <input class="input" name="description" id="description" placeholder="Tell us more about your shop...">
+      </div>
+      <div class='input-container'>
+        <label for="address">Address</label>
+        <input class="input" name="address" id="address" placeholder="Where is your shop ?">
+      </div>
 
-<form action="/myShop/createShop/:id" method="post">
-<div>
-    <label for="description">Description</label>
-    <input name="description" id="description" placeholder="Tell us more about your shop...">
+      <div class='input-container'>
+        <label for="phone">Phone</label>
+        <input class="input" name="phone" id="phone" placeholder="How customers can join you ?">
+      </div>
+      <button id="submit-button">Submit infos</button>
+    </div>
+  </div>
+  <div id="shelves-placeholder">
+    <h2>Your shelves are still empty !</h2>
+    <a href="/myshop/create-shop">
+      <div class="circle"><i class="fas fa-plus"></i></div>
+    </a>
+    <div>Add items to your store</div>
+  </div>
 </div>
-<div>
-    <label for="address">Address</label>
-    <input name="address" id="address" placeholder="Where is your shop ?">
-</div>
-<div>
-    <label for="address">Address</label>
-    <input name="address" id="address" placeholder="Where is your shop ?">
-</div>
-
-<button type="submit">Submit infos</button>
-</form>
