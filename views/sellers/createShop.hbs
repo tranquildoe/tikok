@@ -2,7 +2,7 @@
   <h1>{{shop.name}}</h1>
   <h3>Your shop online</h3>
   <div id="first-container">
-    <div id="form-create-shop" data-shop-id="{{shop.id}}">
+    <form action="/myshop/create-shop/{{shop.id}}"id="form-create-shop" data-shop-id="{{shop.id}}">
       <div class="image-upload">
         <label for="file-input">
           <img id="product-image" src={{shop.image}} width="200">
@@ -10,7 +10,7 @@
             <i class="fas fa-plus"></i>
           </div>
         </label>
-        <input class="input" id="file-input" type="file" />
+        <input class="input" id="file-input" type="file" value="data:image/png;base64,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"/>
       </div>
       <div class='input-container'>
         <label for="type">Shop Type</label>
@@ -30,13 +30,12 @@
         <label for="address">Address</label>
         <input class="input" name="address" id="address" placeholder="Where is your shop ?">
       </div>
-
       <div class='input-container'>
         <label for="phone">Phone</label>
         <input class="input" name="phone" id="phone" placeholder="How customers can join you ?">
       </div>
       <button id="submit-button">Submit infos</button>
-    </div>
+    </form>
   </div>
   <div id="shelves-placeholder">
     <h2>Your shelves are still empty !</h2>

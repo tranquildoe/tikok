@@ -3,11 +3,12 @@
     height: 40vh;
     background-color: white;
     border:1px solid grey;
-    box-shadow: 10px 5px 5px grey;
+    box-shadow: 2px 2px 2px grey;
     padding: 4%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative
 }
 
 .grid-container {
@@ -29,4 +30,28 @@ padding: 2%
 }
 .infos-placeholder   *{
 font-size: 2.3Vh;
+}
+
+.crud-btn {
+    height: 4vh;
+    width: 10vh;
+    border-radius: 20px;
+    margin: 2vh;
+    color : white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.placeholder-button{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 3vh;
+    bottom: 0;
+}
+.delete-btn {
+    background-color: tomato;
+}
+.edit-btn {
+    background-color: teal;
 }
