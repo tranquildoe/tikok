@@ -18,25 +18,24 @@ router.get("/create-shop/:id", (req, res, next) => {
       })
     );
 });
-router.patch(
-  "/create-shop/:id",
-  uploadCloud.single("image"),
+router.post("/create-shop/:id",uploadCloud.single("image"),
   (req, res, next) => {
-    const { address, phone, description, type } = req.body;
+    console.log("heye", req.body);
+    const {address, phone, description} = req.body;
     // const image = req.file.url;
     shopModel.findByIdAndUpdate(req.params.id, {
       address,
       phone,
-      description,
-      type
-    }); // +image + transformer les input en form dans createShop view
+      description
+    }, {new :true })
+    .then(dbRes => {
+      debugger
+      res.json(dbRes)})
+    .catch(next)
+     // +image + transformer les input en form dans createShop view
   }
 );
 
-router.post("/create-shop/:id", (req, res, next) => {
-  console.log("merde");
-  res.send("merde");
-});
 
 router.get("/myshelves/:id",(req, res, next) => {
     shopModel
