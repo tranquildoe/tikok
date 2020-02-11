@@ -93,6 +93,8 @@ a {
   font-size: 20px;
 }
 
+/* login seller */
+
 .tout {
 	display: flex;
 	justify-content: center;
@@ -130,10 +132,9 @@ a {
   display: flex;
   justify-content: center;
   align-items: baseline;
-
 }
 
-label {
+.label {
   margin-right: 2%;
   font-size: 4vh;
 }
@@ -149,8 +150,6 @@ label {
   align-content: center;
   align-items: center;
 }
-
-
 
 
 .submit-button {
@@ -172,6 +171,25 @@ label {
   font-size: 2vh;
 }
 
+/* sign up seller */
 
+.signupform {
+  margin-top: 15vh;
+}
 
+.form-info {
+  font-size: 4vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
 
+.formform {
+    width: 100%;
+    height: min-content;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
