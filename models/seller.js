@@ -6,6 +6,7 @@ const sellerSchema = new Schema({
       type: String,
       required : true
     },
+  shop_id: {type:Schema.Types.ObjectId, ref: 'Shop'},
   email: {
       type : String, // add reg ex
       unique : true
@@ -20,6 +21,7 @@ const sellerSchema = new Schema({
       type: String,
       default : "https://res.cloudinary.com/dyvosdvps/image/upload/v1581285962/tikok-pictures/photo_coq_e69qys.jpg"
   }
+
 });
 
 const sellerModel = mongoose.model("Sellers", sellerSchema);

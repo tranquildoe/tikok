@@ -1,20 +1,72 @@
 
 
-<div class="grid-container">
-{{#each items.list_products}}
-<div class="block">
-    <img class="product-image"alt={{this.name}} src={{this.image}} width="300">
-    <div class="infos-placeholder">
-    <div>Item :{{this.name}}</div>
-    <div>Description :{{this.description}}</div>
-    <div>Price :{{this.price}}</div>
-    <div>Quantity : {{this.quantity}}</div>
-    <div>Reference : {{this.ref}}</div>
+<div class="grid-container" data-shop-id="{{shop._id}}">
+  {{#each shop.list_products}}
+    <div class="block display-block">
+        <img class="product-image"alt={{this.name}} src={{this.image}} width="300">
+        <div class="infos-placeholder" data-item-id="{{this.id}}">
+        <div>Item :{{this.name}}</div>
+        <div>Description :{{this.description}}</div>
+        <div>Price :{{this.price}}</div>
+        <div>Quantity : {{this.quantity}}</div>
+        <div>Reference : {{this.ref}}</div>
+        </div>
+        <div class="placeholder-button">
+            <button class="delete-btn crud-btn"><i class="fas fa-trash-alt"></i>Delete</button>
+            <button class="edit-btn crud-btn"><i class="fas fa-edit"></i>Edit</button>
+        </div>
     </div>
-    <div class="placeholder-button">
-        <div class="delete-btn crud-btn"><i class="fas fa-trash-alt"></i>Delete</div>
-        <div class="edit-btn crud-btn"><i class="fas fa-edit"></i>Edit</div>
+  {{/each}}
+<div id="delete-modal" class="modal">
+      <span  class="close" title="Close Modal" onclick="document.getElementById('delete-modal').style.display='none'">&times;</span>
+      <form class="modal-content">
+        <div class="container">
+          <h1>Delete item</h1>
+          <p>Are you sure you want to delete this item?</p>
+          <div class="btn-countainer">
+            <button  type="button" class="crud-btn cancelbtn">Cancel</button>
+            <button type="button" class="crud-btn deletebtn">Delete</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  <div id="edit-modal" class="block-edit block">
+      <span class="close" title="Close Modal" onclick="document.getElementById('edit-modal').style.display='none'">&times;</span>
+      <form class="edit-content">
+        <div class="imageToUpload">
+<button class="add-picture" ><input type='file' onchange="readURL(this);" class="input-image"/></button>
+</div>
+    <h3 class="form-title">Update Item</h3>
+    <div class="form-item-wrapper flexed-item">
+      <label for="category" name="category" class="label-name label">Category</label>
+      <select name="category" id="Products" class="select">
+    <option value="-1" name="category" disabled selected>Choose a category</option>
+    <option value="fruits" name="category">Fruits</option>
+    <option value="vegetables" name="cagetory">Vegetables</option>
+    <option value="fishes & seafood" name="category">Fishes and Seafood</option>
+    <option value="meats" name="category">Meats</option>
+    <option value="artisan goods" name="category">Artisan Goods</option>
+    <option value="growcery" name="category">Growcery</option>
+    <option value="other" name="category">Other</option>
+    </select>
+
+    </div>
+    <div class="edit-form">
+      <label for="name" class="label-ref label">name</label>
+      <input id="name" name='name' type="text" class="input-text input" placeholder="ex: NV23498">
+    </div>
+    <div class="form-item-wrapper flexed-item">
+      <label for="product-price" class="label-price label">Price</label>
+      <input id="product-price" name="price" type="number" class="sneacker-price input" min="1">
+    </div>
+    <div class="form-item-wrapper flexed-item">
+      <label for="product-descr" class="label-descr label">Description</label>
+      <input id="product-descr" name="description" type="text" class="input-text input"
+        placeholder="balaou balaou balaou">
+    </div>
+
+    <button class="button-primary add-product-btn">Edit</button>
+      </form>
     </div>
 </div>
-{{/each}}
-</div>
+

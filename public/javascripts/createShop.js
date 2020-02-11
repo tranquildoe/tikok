@@ -22,6 +22,8 @@ event.preventDefault();
   axios.post(`/myshop/create-shop/${id}`, {shopInfos}).then(res => {
     console.log(res);
     (container.innerHTML = ""),
-      (container.innerHTML = `<div>${res.data.address}</div>`);
+      (container.innerHTML = `<div>Address : ${res.data.address}</div>
+      <div>Description : ${res.data.description}</div>
+      <div>Phone : ${res.data.phone}</div>`);
   });
 };
