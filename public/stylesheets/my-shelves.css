@@ -1,6 +1,4 @@
 .block {
-    width: 40vh;
-    height: 40vh;
     background-color: white;
     border:1px solid grey;
     box-shadow: 2px 2px 2px grey;
@@ -9,6 +7,11 @@
     flex-direction: column;
     align-items: center;
     position: relative
+}
+
+.display-block {
+  width: 40vh;
+  height: 40vh
 }
 
 .grid-container {
@@ -55,3 +58,135 @@ font-size: 2.3Vh;
 .edit-btn {
     background-color: teal;
 }
+
+
+/* Set a style for all buttons */
+
+button:hover {
+  opacity:1;
+}
+
+.deletebtn, .cancelbtn {
+  width: 9vh;
+  margin: 0 12vh;
+}
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 25%;
+  top: 25%;
+  width: 50%; /* Full width */
+  height: 50%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(255, 99, 71, 0.589);
+  padding-top: 5%;
+  border-radius: 4em;
+}
+
+.block-edit{
+  display: none;
+  height: 70vh;
+  width: 70vh;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(32, 31, 31);
+  cursor: pointer;
+}
+
+.btn-container {
+  background-color: teal;
+  height: 10vh;
+  width: 100%;
+}
+
+
+/* Popup container
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  } */
+  
+  /* The actual popup (appears on top) */
+  /* .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  } */
+  
+  /* Popup arrow */
+  /* .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  } */
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  /* .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  } */
+  
+  /* Add animation (fade in the popup) */
+  /* @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  } */
+

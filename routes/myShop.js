@@ -21,7 +21,7 @@ router.get("/create-shop/:id", (req, res, next) => {
 router.post("/create-shop/:id",uploadCloud.single("image"),
   (req, res, next) => {
     console.log("heye", req.body);
-    const {address, phone, description} = req.body;
+    const {address, phone, description} = req.body.shopInfos;
     // const image = req.file.url;
     shopModel.findByIdAndUpdate(req.params.id, {
       address,
@@ -29,7 +29,6 @@ router.post("/create-shop/:id",uploadCloud.single("image"),
       description
     }, {new :true })
     .then(dbRes => {
-      debugger
       res.json(dbRes)})
     .catch(next)
      // +image + transformer les input en form dans createShop view
@@ -39,10 +38,29 @@ router.post("/create-shop/:id",uploadCloud.single("image"),
 
 router.get("/myshelves/:id",(req, res, next) => {
     shopModel
-      .findById(req.params.id, {list_products:1})
-      .then(list => { list.populate('list_products').execPopulate()
-        .then(items => {res.render('sellers/myShelves.hbs', {items, css:["my-shelves"]}); console.log(items)})
-    })
+      .findById(req.params.id, {list_products:1}).populate("list_products")
+        .then(shop => {
+          res.render('sellers/myShelves.hbs', {shop: shop, css:["my-shelves"],scripts:["myShelves"]})
+        })
+    // })
+      .catch(next);
+  });
+
+router.get("/delete-item/:shop_id/:id",(req, res, next) => {
+  console.log("heyyyy")
+   const removeShopProduct = shopModel.findByIdAndUpdate(req.params.shop_id, {$pull: {list_products: req.params.id}},{new:true});
+   const removeProduct= productModel.findByIdAndRemove(req.params.id);
+      Promise.all([removeShopProduct, removeProduct])
+      .then( dbRes => {
+        res.json(dbRes[0])})
+      .catch(next);
+  });
+
+router.post("/edit-item/:shop_id/:id",(req, res, next) => {
+  const {description, name, prix} = req.body
+  productModel.findByIdAndUpdate(req.params.id, {description, name, prix})
+      .then(updatedProduct => {
+        res.json(updatedProduct)})
       .catch(next);
   });
 
