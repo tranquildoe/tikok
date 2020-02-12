@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get("/:shop_id", (req, res, next) => {
+router.get("/shop/:shop_id", (req, res, next) => {
     shopModel.findById(req.params.shop_id).populate("list_products")
     .then(shop => {
       res.render("platform/shop", {shop})})

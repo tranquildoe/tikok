@@ -16,9 +16,20 @@ router.get('/home', function(req, res, next) {
   .then(sixShops => res.render('platform/home', {sixShops, css:["home"]}))
 });
 
-router.get('/shop/:id', function(req, res, next) {
-// req.params.id
-  res.render('platform/shop');
+
+
+function uniquifyArray(array) {
+  for (let i = array.length - 1; i >= 0; i--) {
+    if (array.indexOf(array[i]) !== i) {
+      array.splice(i, 1);
+    }
+  }
+  return array;
+}
+
+router.get('/shopping/:cat', function(req, res, next) {
+productModel.find({category : req.params.cat, isTemplate: false}).populate('id_shop')
+.then(products => res.render('platform/category', {products}))
 });
 
 router.get('/shop/:id/product/:ref', function(req, res, next) {
