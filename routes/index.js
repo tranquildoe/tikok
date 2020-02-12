@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
-// commented out until get updated productModel:
-// const productModel = require("./../models/products")
+const mongoose = require("mongoose");
+const productModel = require("../models/product");
+const sellerModel = require("../models/seller");
+const shopModel = require("../models/shop");
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,7 +12,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/home', function(req, res, next) {
-  res.render('platform/home');
+  shopModel.find().limit(6)
+  .then(sixShops => res.render('platform/home', {sixShops, css:["home"]}))
 });
 
 router.get('/shop/:id', function(req, res, next) {
