@@ -133,4 +133,12 @@ router.post("/select-items", function(req, res, next) {
   console.log(req.body);
 });
 
+router.get("/dashboard/:shop_id", (req, res, next) => {
+  shopModel
+  .findById(req.params.shop_id)
+    .then(shop => res.render("sellers/dashboard", {shop})
+    );
+    console.log("here", req.params.shop_id)
+  })
+
 module.exports = router;

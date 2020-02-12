@@ -6,7 +6,7 @@ const sellerSchema = new Schema({
       type: String,
       required : true
     },
-  shop_id: {type:Schema.Types.ObjectId, ref: 'Shop'},
+  shop_id : {type:Schema.Types.ObjectId, ref:"Shop"},
   email: {
       type : String, // add reg ex
       unique : true

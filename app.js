@@ -7,8 +7,9 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-const session = require("express-session");
+const session = require('express-session');
 const MongoStore = require("connect-mongo")(session);
+const flash = require("connect-flash");
 const hbs = require("hbs");
 
 var indexRouter = require("./routes/index");
@@ -29,6 +30,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(flash());
+hbs.registerPartials(path.join(__dirname, "views/partials"));
+
+
+
+
+function checkloginStatus(req, res, next) {
+  res.locals.user = req.session.currentUser ? req.session.currentUser : null;
+  // access this value @ {{user}} or {{user.prop}} in .hbs
+  res.locals.isLoggedIn = Boolean(req.session.currentUser);
+  // access this value @ {{isLoggedIn}} in .hbs
+  next(); // continue to the requested route
+  }
+
 
 app.use(
   session({
@@ -39,11 +54,20 @@ app.use(
   })
 );
 
+app.use(function exposeFlashMessage(req, res, next) {
+  
+  res.locals.success_msg = req.flash("success");
+  res.locals.error_msg = req.flash("error");
+  next();
+});
+
 app.use("/", indexRouter);
 app.use("/shopping", custRouter);
 app.use("/admin", adminRouter);
 app.use("/", authRouter);
 app.use("/myshop", shopRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -61,7 +85,7 @@ app.use(function(err, req, res, next) {
   res.render("error");
 });
 
-// app.use(checkloginStatus);
-
+app.use(checkloginStatus);
+// app.use(exposeFlashMessage)
 
 module.exports = app;

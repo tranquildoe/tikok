@@ -29,3 +29,167 @@ a {
 .input-image:checked + div {
     background: #000
 }
+
+/* Flash messages */
+.success {
+  width: 20vh;
+  height: 5vh;
+  border: solid 1px black;
+  background-color: green;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Flash messages */
+.error {
+  width: 20vh;
+  height: 5vh;
+  border: solid 1px black;
+  background-color: #f08080;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dash {
+  height: 40vw;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 20vh;
+}
+
+.avatar {
+  width: 20vh;
+  height: 20vh;
+}
+
+.titleandimage {
+  display: flex;
+}
+
+.shelvesandorders {
+  width: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gotomy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px;
+  border-radius: 30px;
+  width: 40vh;
+  height: 20vh;
+  background-color:rgba(255,99,71,0.5);
+  font-size: 20px;
+}
+
+/* login seller */
+
+.tout {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  align-content: center;
+  margin-top: 15vh;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.form-title {
+  font-size: 8vh;
+}
+
+.input {
+  height: .1rem;
+  border-radius: 30px;
+  border : 2px solid white;
+  background-color: tomato;
+  width: 30em;
+  padding: 4%;
+  color: white;
+}
+
+.form-item-wrapper{
+  width: 100%;
+  height: min-content;
+  margin: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.label {
+  margin-right: 2%;
+  font-size: 4vh;
+}
+
+.input::placeholder {
+  color: white;
+  font-size: 2vh;
+}
+
+.btnlogin {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+
+.submit-button {
+  border-radius: 50px;
+  height: 9vh;
+  width: 25vh;
+  color: tomato;
+  font-size: 3vh;
+  padding: 2%;
+  margin-top: 2%;
+}
+
+
+.form-sub-infos {
+  font-size: 3vh;
+}
+
+.button-link-form {
+  font-size: 2vh;
+}
+
+/* sign up seller */
+
+.signupform {
+  margin-top: 15vh;
+}
+
+.form-info {
+  font-size: 4vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.formform {
+    width: 100%;
+    height: min-content;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
