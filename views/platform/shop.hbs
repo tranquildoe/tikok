@@ -7,13 +7,12 @@
 <div class="grid-container" data-shop-id="{{shop._id}}">
   {{#each shop.list_products}}
     <div class="block display-block">
-        <img class="product-image"alt={{this.name}} src={{this.image}} width="300">
+      
+        <a href="/shopping/{{../shop.id}}/{{this.id}}"><img class="product-image"alt={{this.name}} src={{this.image}} width="300"></a>
         <div class="infos-placeholder" data-item-id="{{this.id}}">
         <div>Item :{{this.name}}</div>
+        <div>Price :{{this.price}}</div>
 
-        </div>
-        <div class="placeholder-button">
-            <button class="info-btn"><i class="fas fa-trash-alt"></i>Description</button>
         </div>
     </div>
     {{/each}}
