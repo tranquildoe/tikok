@@ -1,0 +1,17 @@
+#header-home {
+    background-image: url('https://res.cloudinary.com/dyvosdvps/image/upload/v1581515139/tikok-pictures/fruits_header_bwq4tv.jpg');
+    background-size: cover;
+    background-position: 0 0;
+    height: 55vh;
+    color: white;
+}
+ .header-background {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(31, 30, 30, 0.698);
+    display: flex;
+ }
+
+ #title {
+     font-size: 20em;
+ }
