@@ -228,9 +228,32 @@ a {
   justify-content: space-between;
 }
 
-/* plaftorm shops products */
+/* shops products */
 
 .shopname {
   font-size: 10vh;
 }
 
+/* shops products description */
+
+.btnorder {
+  width: 20vh;
+  height: 10vh;
+  color: white;
+  border: 1px solid tomato;
+  color: tomato;
+}
+
+.btnorder:hover {
+  background-color: tomato;
+  border: 1px solid black;
+  color: white;
+}
+
+.nadap {
+  display: flex;
+}
+
+.priceofproduct {
+  margin-left: 27vh;
+}
