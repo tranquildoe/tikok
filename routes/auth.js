@@ -25,7 +25,7 @@ router.post("/myshop/signup", (req, res, next) => {
   // if (req.file) user.avatar = req.file.secure_url;
   shopModel;
   if (
-    !newSeller.username ||
+    !newShop.name ||
     !newSeller.username ||
     !newSeller.email ||
     !newSeller.password
