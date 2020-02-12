@@ -9,6 +9,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
+const hbs = require("hbs");
 
 var indexRouter = require("./routes/index");
 var custRouter = require("./routes/customers");
@@ -21,6 +22,7 @@ var app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
+hbs.registerPartials(__dirname + "/views/partials");
 
 app.use(logger("dev"));
 app.use(express.json());

@@ -1,5 +1,5 @@
 import service from "./api.js";
-const inputs = document.getElementsByClassName("input-create");
+
 const imageFile = document.getElementById("file-input");
 const typeSelect = document.getElementById("type");
 const description = document.getElementById("description");
@@ -10,20 +10,51 @@ const button = document.getElementById("submit-button");
 const formCreate = document.getElementById("form-create-shop");
 const id = formCreate.getAttribute("data-shop-id");
 
+
+imageFile.onchange = () => {
+if(imageFile.files[0]){
+  const tmpUrl = URL.createObjectURL(imageFile.files[0]);
+  console.log(tmpUrl)
+  console.log(imageFile.files[0])
+  document.querySelector(".image-container img").src = tmpUrl;
+}
+
+}
+
 formCreate.onsubmit = function(event) {
-event.preventDefault();
+  event.preventDefault();
+  // console.log(imageFile, "value=", imageFile.value)
   const shopInfos = {
-    // image: inputs.value,
+    image: imageFile.files[0],
     // type: typeSelect.value,
     description: description.value,
     address: address.value,
     phone: phone.value
   };
-  axios.post(`/myshop/create-shop/${id}`, {shopInfos}).then(res => {
-    console.log(res);
-    (container.innerHTML = ""),
-      (container.innerHTML = `<div>Address : ${res.data.address}</div>
-      <div>Description : ${res.data.description}</div>
-      <div>Phone : ${res.data.phone}</div>`);
+  const formData = new FormData();
+
+  for (let prop in shopInfos) {
+    formData.append(prop, shopInfos[prop]);
+  }
+
+  axios.post(`/myshop/create-shop/${id}`, formData).then(res => {
+    replaceInfos(container, res);
   });
 };
+
+function replaceInfos(container, res) {
+  container.querySelector(
+    ".address-container"
+  ).innerHTML = `<div>Address : ${res.data.address}</div>`;
+  container.querySelector(
+    ".phone-container"
+  ).innerHTML = `<div>Phone : ${res.data.phone}</div>`;
+  container.querySelector(
+    ".description-container"
+  ).innerHTML = `<div>Phone : ${res.data.description}</div>`;
+  // container.querySelector('.type-container').innerHTML = `<div>Type : ${res.data.type}</div>`
+  container.querySelector(
+    ".image-container"
+  ).innerHTML = `<img alt="shop" src="${res.data.image}" width="300"></div>`;
+  button.parentElement.removeChild(button);
+}

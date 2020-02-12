@@ -1,3 +1,11 @@
+h1 {
+  font-size: 9vh;
+  margin: 3vh 3vh 6vh;
+  text-align: center;
+}
+h2 {
+  font-size: 3vh;
+}
 .block {
     background-color: white;
     border:1px solid grey;
@@ -55,7 +63,7 @@ font-size: 2.3Vh;
 .delete-btn {
     background-color: tomato;
 }
-.edit-btn {
+.green-btn {
     background-color: teal;
 }
 
@@ -80,22 +88,19 @@ button:hover {
   background-color: #f44336;
 }
 
-/* Add padding and center-align text to the container */
 .container {
   padding: 16px;
   text-align: center;
   width: 100%;
 }
-
-/* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 25%;
   top: 25%;
-  width: 50%; /* Full width */
-  height: 50%; /* Full height */
+  width: 50%;
+  height: 50%;
   overflow: auto; /* Enable scroll if needed */
   background-color: rgba(255, 99, 71, 0.589);
   padding-top: 5%;
@@ -104,17 +109,19 @@ button:hover {
 
 .block-edit{
   display: none;
-  height: 70vh;
-  width: 70vh;
+  height: 60vh;
+  width: 60vh;
+  position: fixed;
+  z-index: 1;
+  left: calc(50% - 35vh);
+  top: calc(50% - 35vh);
 }
 
-/* Modal Content/Box */
 .modal-content {
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  width: 80%; /* Could be more or less, depending on screen size */
+  margin: 5% auto 15% auto; 
+  width: 80%;
 }
 
-/* The Modal Close Button (x) */
 .close {
   position: absolute;
   right: 35px;
@@ -135,7 +142,46 @@ button:hover {
   height: 10vh;
   width: 100%;
 }
+.edit-content {
+  box-sizing: border-box;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4%;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+.input {
+  height: .1rem;
+  border-radius: 30px;
+  border : 2px solid teal;
+  width: 20em;
+  padding: 4%;
+  color: grey;
+}
 
+.input-container{
+  width: 100%;
+  height: min-content;
+  margin: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+label {
+  margin-right: 2%;
+  font-size: 2vh;
+}
+
+#select{
+  height: 5vh;
+}
+
+select option {
+  font-size: 2vh;
+}
 
 /* Popup container
 .popup {
