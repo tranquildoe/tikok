@@ -13,7 +13,12 @@
         </div>
         </div>
 
+      <a href="/"><button class="btnorder">ORDER</button></a>
 
-      <a href="/shopping/"><button class="btnorder">ORDER</button></a>
-
+{{#each shop}}
+      <div>
+        <img src="{{this.image}}" alt="" width="300"> 
+        <h3>{{this.name}}</h3>     
+        </div>
+{{/each}}
     </div>
