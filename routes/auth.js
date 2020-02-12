@@ -107,6 +107,13 @@ router.post("/myshop/login", (req, res, next) => {
 });
 
 
+// seller logout
+
+router.get("/logout", (req, res) => {
+  req.session.destroy(() => {
+    res.redirect("/");
+  });
+});
 
 
 module.exports = router;
