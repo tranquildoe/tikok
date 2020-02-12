@@ -73,23 +73,27 @@ router.get("/myshop/login", (req, res) => {
 });
 
 router.post("/myshop/login", (req, res, next) => {
-  const seller = req.body;
+  const seller = {
+    email: req.body.email,
+    password: req.body.password
+  };
+
+  sellerModel
   if (!seller.email || !seller.password) {
-    req.flash("error", "wrong credentials");
+    req.flash("error", "Please fill everything");
     return res.redirect("/myshop/login");
   } else {
     sellerModel
       .findOne({ email: seller.email })
       .then(dbRes => {
         if (!dbRes) {
-          req.flash("error", "wrong credentials");
+          req.flash("error", "You didn't signup with this e-mail");
           return res.redirect("/myshop/login");
-         
         }
         if (bcrypt.compareSync(seller.password, dbRes.password)) {
           const { _doc: clone } = { ...dbRes };
           delete clone.password;
-          console.log(req.session)
+          // console.log(req.session)
           req.session.currentUser = clone;
           req.flash("success", "access garanted")
           return res.redirect(`/myshop/dashboard/${dbRes.shop_id}`);

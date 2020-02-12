@@ -115,28 +115,31 @@ a {
   font-size: 8vh;
 }
 
-.input {
+.inputlogin {
   height: .1rem;
   border-radius: 30px;
   border : 2px solid white;
   background-color: tomato;
-  width: 30em;
+  width: 35em;
   padding: 4%;
+  color: white;
+}
+
+.inputlogin::placeholder {
   color: white;
 }
 
 .form-item-wrapper{
   width: 100%;
-  height: min-content;
+  /* height: min-content; */
   margin: 1%;
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: baseline; */
 }
 
 .label {
   margin-right: 2%;
-  font-size: 4vh;
 }
 
 .input::placeholder {
@@ -189,7 +192,37 @@ a {
     width: 100%;
     height: min-content;
     margin: 1%;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
 }
+
+.inputsignup {
+  height: .1rem;
+  border-radius: 30px;
+  border : 2px solid white;
+  background-color: tomato;
+  width: 35em;
+  padding: 4%;
+  color: white;
+}
+
+.inputsignup::placeholder {
+  color: white;
+}
+
+
+/*home page */
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* plaftorm shops products */
+
+.shopname {
+  font-size: 10vh;
+}
+
