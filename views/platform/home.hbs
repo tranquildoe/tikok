@@ -6,25 +6,29 @@
     {{>searchBar}}
 </header>
 <section id="main-home">
-    <div class="display-categories">
         <h2>Categories</h2>
+    <div class="display-categories">
         <a href="/shopping/fruits"><div id="fruits-block" class="category-block">Fruits</div></a>
         <a href="/shopping/vegetables"><div id="vegetables-block" class="category-block">Vegetables</div></a>
         <a href="/shopping/fishes"><div id="fishes-block" class="category-block">Fishes & Seafood</div></a>
         <a href="/shopping/meats"><div id="meats-block" class="category-block">Meats</div></a>
-        <a href="/shopping/growcery"><div id="growcery" class="category-block">Growcery</div></a>
+        <a href="/shopping/grocery"><div id="grocery-block" class="category-block">Grocery</div></a>
         <a href="/shopping/artisan"><div id="artisan goods" class="category-block">Artisan goods</div></a>
         <a href="/shopping/other"><div id="other-block" class="category-block">Other</div></a>
     </div>
-    <div id="someShops">
+    <div id="shops">
     <h2>Some Shops</h2>
+    <div id="someShops">
         {{#each sixShops}}
-        <div>
+        <a href="/shopping/{{this.id}}">
+        <div class="shop-block">
             <img class="image-shop"alt="shop" src="{{this.image}}" width="300">
             <h3>{{this.name}}</h3>
             <p class="description">{{this.description}}</p>
         </div>
+        </a>
         {{/each}}
+    </div>
     </div>
 </section>
 

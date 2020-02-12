@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Tajawal&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 body {
   padding: 0;
   margin: 0;
@@ -8,8 +8,8 @@ body * {
   padding: 0;
   margin: 0;
   font: 1em;
-  font-family:'Tajawal', sans-serif;
-  
+  font-family: 'Muli', sans-serif;
+
 }
 
 a {

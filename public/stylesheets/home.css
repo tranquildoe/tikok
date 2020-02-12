@@ -10,8 +10,60 @@
     width: 100%;
     background-color: rgba(31, 30, 30, 0.698);
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
  }
 
  #title {
-     font-size: 20em;
+     font-size: 15em;
+     font-weight: lighter;
+
  }
+
+ .category-block {
+     width: 40vh;
+     height: 30vh;
+     box-shadow: 5px 5px 5px grey;
+ }
+
+ #fruits-block {
+     background-image: url(https://res.cloudinary.com/dyvosdvps/image/upload/v1581515139/tikok-pictures/fruits_header_bwq4tv.jpg) ;
+     background-size: cover;
+     background-position: 0 0;
+}
+ #vegetables-block {
+     background-image: url(https://res.cloudinary.com/dyvosdvps/image/upload/v1581517351/tikok-pictures/tropical_vegetables_cbs23g.jpg) ;
+     background-size: cover;
+     background-position: 0 0;
+}
+ #fishes-block {
+     background-image: url(https://res.cloudinary.com/dyvosdvps/image/upload/v1581517477/tikok-pictures/seafood_fqcd3n.jpg) ;
+     background-size: cover;
+     background-position: 0 0;
+}
+ #meats-block {
+     background-image: url(https://res.cloudinary.com/dyvosdvps/image/upload/v1581518043/tikok-pictures/jez-timms-DVRXFIH42d0-unsplash_scchqj.jpg) ;
+     background-size: cover;
+     background-position: 0 0;
+ }
+ #grocery-block {
+     background-image: url(https://res.cloudinary.com/dyvosdvps/image/upload/v1581518222/tikok-pictures/neonbrand-SvhXD3kPSTY-unsplash_xb9n0l.jpg) ;
+     background-size: cover;
+     background-position: 0 0;
+}
+
+.display-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40vh, 1fr));
+    grid-gap: 5vh;
+}
+
+#someShops {
+    display: flex;
+    overflow: scroll;
+}
+
+.shop-block {
+    margin : 3vh;
+}
