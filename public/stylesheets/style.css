@@ -698,7 +698,6 @@ a {
   opacity: 1;
   z-index: 1;
   display: flex;
-<<<<<<< HEAD
   font-size: 5.5vh;
   text-align: center;
   border-radius: 15px;
@@ -717,7 +716,3 @@ a {
   width: 200px;
   text-align: center;
 }
-=======
-  font-size: 2vh;
-}
->>>>>>> d9aaa04423f3196cdd73a177b521329201205d0e
