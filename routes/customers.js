@@ -6,19 +6,15 @@ const shopModel = require("../models/shop");
 const customerModel = require("../models/customer");
 const bcrypt = require("bcrypt");
 
-/* GET newClients listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
 
 // sign up customer
 
-router.get("/customer/signup", (req, res) => {
+router.get("/signup", (req, res) => {
   res.render("customer/signup");
 });
 
-router.post("/customer/signup", (req, res, next) => {
-  const newClient = {
+router.post("/signup", (req, res, next) => {
+  const newclient = {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password
@@ -39,7 +35,7 @@ router.post("/customer/signup", (req, res, next) => {
       email : newClient.email,
     })
     .then(dbRes => {
-      if (dbRes) return res.redirect("/shopping/customer/signup"); //
+      if (dbRes) return res.redirect("/shopping/signup"); //
       req.flash("error", "This email already exists");
       console.log("signuuuuuup")
       const salt = bcrypt.genSaltSync(10); // https://en.wikipedia.org/wiki/Salt_(cryptography)
@@ -55,12 +51,12 @@ router.post("/customer/signup", (req, res, next) => {
 
 //sign in customer
 
-router.get("/customer/login", (req, res) => {
+router.get("/login", (req, res) => {
   res.render("customer/signin");
 });
 
 
-router.post("/customer/login", (req, res, next) => {
+router.post("/login", (req, res, next) => {
   const user = req.body;
   if (!user.email || !user.password) {
     req.flash("error", "Please fill everything");
@@ -113,7 +109,7 @@ router.get("/logout", (req, res) => {
   });
 });
 
-// display product of a shop 
+// display products of a shop 
 
 router.get("/shop/:shop_id", (req, res, next) => {
   shopModel.findById(req.params.shop_id).populate("list_products")
@@ -127,7 +123,7 @@ router.get("/shop/:shop_id", (req, res, next) => {
 
 // display one product of a specific shop
 
-router.get("/:shop_id/:id", (req, res, next) => {
+router.get("/shop/:shop_id/:id", (req, res, next) => {
   console.log("id product ====>" , req.params.id);
   
   Promise.all([
@@ -146,8 +142,5 @@ router.get("/:shop_id/:id", (req, res, next) => {
     })
     .catch(next)
 })
-
-
-
 
 module.exports = router;

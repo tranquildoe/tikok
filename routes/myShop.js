@@ -16,13 +16,8 @@ router.get("/create-shop/:id", (req, res, next) => {
     })
   );
 });
-router.post(
-  "/create-shop/:id",
-  uploadCloud.single("image"),
-  (req, res, next) => {
+router.post("/create-shop/:id", uploadCloud.single("image"),(req, res, next) => {
     const { address, phone, description } = req.body; //type
-    console.log(req.body);
-    console.log(req.file);
     const newPoulet = {
       address,
       phone,

@@ -7,7 +7,10 @@ const productSchema = new Schema({
     type:Schema.Types.ObjectId,
     ref: 'Shop'
   },
-  isTemplate: Boolean,
+  isTemplate: {
+    type: Boolean,
+    default: false
+  },
   ref: String,
   price: Number,
   quantity: Number,
