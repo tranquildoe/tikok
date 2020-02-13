@@ -1,3 +1,19 @@
+  <header class="dashboard-header">
+    <nav class="navbar">
+        <div class="logoandtext">
+            <img src="/coq.png" alt="imgcoq" class="coqimg">
+            <p class="tikoktext">tikok</p>
+        </div>
+        <div class="navtext">
+      <ul class="navlist">
+        <li><a href="/myshop/myshelves/{{shop.id}}"> My Shelves </a></li>
+        <li><a href=""> My Orders</a></li>
+        <li><a href="/logout"> log out </a></li>
+      </ul>
+      </div>
+    </nav>
+  </header>
+
 <h1>My Shelves</h1>
 {{> searchBar}}
 <div class="grid-container" data-shop-id="{{shop._id}}">

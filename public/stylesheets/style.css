@@ -261,7 +261,7 @@ a {
 /* dashboard seller */
 
 .dashboard-header {
-  position: fixed;
+  /* position: fixed; */
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
@@ -298,7 +298,7 @@ a {
 }
 
 .tikoktext {
-  font-size: 4vh;
+  font-size: 3vh;
   color: white;
 }
 /* 
