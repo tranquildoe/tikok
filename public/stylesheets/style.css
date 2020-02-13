@@ -273,7 +273,7 @@ a {
 /* shops products */
 
 .shopname {
-  font-size: 10vh;
+  font-size: 10vw;
 }
 
 /* shops products description */
@@ -341,11 +341,12 @@ a {
   /* justify-content: space-between;  */
   width: 100%;
   /* background-color: rgb(20, 175, 175);  */
-  border-radius: 0vh 0vh 3vh 0vh; 
+  border-radius: 0vh 0vh 0vh 0vh; 
   /* background-image: url('/beach2.png'); */
   background-color: rgb(5, 110, 93);
   background-size: cover;
   height: 8vh;
+  border-bottom: 4px solid white;
 }
 
 .navbar {
@@ -429,6 +430,35 @@ text-decoration: underline;
   right: 15vh;
 }
 
+
+/* Header drawing */
+
+#drawingHolder {
+  background-image: url('https://res.cloudinary.com/dyvosdvps/image/upload/v1581595867/tikok-pictures/drawingWhite_cp1xro.png');
+  /* option in black https://res.cloudinary.com/dyvosdvps/image/upload/v1581595716/tikok-pictures/drawingBlack_hkcsff.png */
+  background-color: rgb(5, 110, 93);
+  width: 100vw;
+  height: 30vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  /* margin-top: 1vh; */
+}
+
+/* Shop page while shopping */
+#sShopImg {
+  height: auto; 
+  width: 22vw; 
+}
+
+#sTitleHolder {
+  position: absolute;
+  top: 70%;
+}
+
+.grid-container {
+  padding-top: 35vh;
+}
 
 /* create item */
 
