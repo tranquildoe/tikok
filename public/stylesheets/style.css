@@ -341,11 +341,12 @@ a {
   /* justify-content: space-between;  */
   width: 100%;
   /* background-color: rgb(20, 175, 175);  */
-  border-radius: 0vh 0vh 3vh 0vh; 
+  border-radius: 0vh 0vh 0vh 0vh; 
   /* background-image: url('/beach2.png'); */
   background-color: rgb(5, 110, 93);
   background-size: cover;
   height: 8vh;
+  border-bottom: 4px solid white;
 }
 
 .navbar {
@@ -441,7 +442,7 @@ text-decoration: underline;
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
-  margin-top: 1vh;
+  /* margin-top: 1vh; */
 }
 
 /* Shop page while shopping */
@@ -454,6 +455,11 @@ text-decoration: underline;
   position: absolute;
   top: 70%;
 }
+
+.grid-container {
+  padding-top: 35vh;
+}
+
 /* create item */
 
 
