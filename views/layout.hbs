@@ -8,10 +8,13 @@
     />
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAim-eUas3wZ_ztBaoEg8OEe09LczH5O9w&libraries=places">
+  </script>
     {{#each css}}
     <link rel='stylesheet' href='/stylesheets/{{this}}.css'/>
     {{/each}}
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src='/javascripts/main.js'></script>
     {{#each scripts}}
     <script type="module" src='/javascripts/{{this}}.js'></script>
     {{/each}}
