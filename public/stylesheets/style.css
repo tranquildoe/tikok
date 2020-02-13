@@ -615,12 +615,12 @@ a {
   flex-direction: row;
 }
 
-#sStartBody {
+/* #sStartBody {
 /* 
   background:linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('/bg.jpg');
   background-size: cover;
   background-repeat:no-repeat; */
-}
+*/
 #sStartBackground::before {
   background-image: url('/tropicalFruit.jpg');
   background-size: cover;
