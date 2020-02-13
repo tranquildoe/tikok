@@ -27,12 +27,14 @@ h2 {
   width: 40vh;
   height: 40vh;
   margin-left: 5vw;
+  margin-bottom: 5vw;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(40vh, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(50vh, 1fr));
     grid-gap: 2vh;
+    margin-bottom: 2vw;
 }
 
 .product-image {
@@ -325,6 +327,11 @@ select option {
   align-items: center;
   align-content: center;
   color: tomato;
+}
+
+.circle:hover {
+  transform: scale(1.09);
+  filter: grayscale(0%);
 }
 
 
