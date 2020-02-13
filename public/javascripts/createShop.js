@@ -1,4 +1,6 @@
 import service from "./api.js";
+const geocoder = new google.maps.Geocoder();
+const map = new google.maps.Map(document.getElementById('map'));
 
 const imageFile = document.getElementById("file-input");
 const typeSelect = document.getElementById("type");
@@ -12,13 +14,12 @@ const id = formCreate.getAttribute("data-shop-id");
 
 
 imageFile.onchange = () => {
-if(imageFile.files[0]){
-  const tmpUrl = URL.createObjectURL(imageFile.files[0]);
-  console.log(tmpUrl)
-  console.log(imageFile.files[0])
-  document.querySelector(".image-container img").src = tmpUrl;
-}
-
+  if(imageFile.files[0]){
+    const tmpUrl = URL.createObjectURL(imageFile.files[0]);
+    console.log(tmpUrl)
+    console.log(imageFile.files[0])
+    document.querySelector(".image-container img").src = tmpUrl;
+  }
 }
 
 formCreate.onsubmit = function(event) {
@@ -37,7 +38,7 @@ formCreate.onsubmit = function(event) {
     formData.append(prop, shopInfos[prop]);
   }
 
-  axios.post(`/myshop/create-shop/${id}`, formData).then(res => {
+  service.post(`/myshop/create-shop/${id}`, formData).then(res => {
     replaceInfos(container, res);
   });
 };

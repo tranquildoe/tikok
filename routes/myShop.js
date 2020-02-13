@@ -21,7 +21,7 @@ router.post("/create-shop/:id", uploadCloud.single("image"),(req, res, next) => 
     const newPoulet = {
       address,
       phone,
-      description
+      description,
     };
     if (req.file) newPoulet.image = req.file.secure_url;
     shopModel

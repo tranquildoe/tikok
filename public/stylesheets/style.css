@@ -376,3 +376,8 @@ a {
   bottom: -5.1vh;
   right: 15vh;
 }
+
+.display-location {
+  width: 100%;
+  height: 400px;
+}
