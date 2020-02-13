@@ -136,4 +136,16 @@ router.get("/dashboard/:shop_id", (req, res, next) => {
     console.log("here", req.params.shop_id)
   })
 
+// search bar on my shelves
+
+router.get('/shopping/search', function(req, res, next) {
+  console.log(req.query)
+productModel
+.find({name: { $regex: req.query.q, $options: "i" }, isTemplate : false}).populate('id_shop')
+.then(dbRes => res.json(dbRes))
+.catch(next)
+});
+
+
+
 module.exports = router;

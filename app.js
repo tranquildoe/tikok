@@ -54,12 +54,29 @@ app.use(
   })
 );
 
-app.use(function exposeFlashMessage(req, res, next) {
-  
+
+// middlewares
+
+app.use(function exposeFlashMessage(req, res, next) {  
   res.locals.success_msg = req.flash("success");
   res.locals.error_msg = req.flash("error");
   next();
 });
+
+app.use(function exposeLoginStatus(req, res, next) {
+  if (!req.session.currentUser) {
+    res.locals.currentUser = undefined;
+    res.locals.isLoggedIn = false;
+    res.locals.isAdmin = false;
+  } else {
+    res.locals.currentUser = req.session.currentUser;
+    res.locals.isLoggedIn = true;
+    res.locals.isAdmin = req.session.currentUser.role === "admin";
+  }
+  next();
+});
+
+
 
 app.use("/", indexRouter);
 app.use("/shopping", custRouter);

@@ -11,20 +11,52 @@
       <ul class="navlist">
         <li><a href="/"> Home </a></li>
         <li><a href="/myshop/dashboard/{{shop.id}}"> My Dashboard </a></li>
-        <li><a href="/" > Log Out</a></li>
+        <li><a href="/" >Log Out</a></li>
       </ul>
     </div>
   </nav>
 </header>
 
+
+
+
+
+
+
+<div class="myshelves123">
+<div class="myshelvestitle">
 <h1>My Shelves</h1>
-{{> searchBar}}
+</div>
+<div class="search-placeholder">
+    <form id="search-form" action="/shopping/search">
+   <input type="search" id="search-bar" name="q"
+       aria-label="Search through site content" placeholder="filter" >
+    <button type="submit" id="search-button"><i class="fas fa-search"></i></button>
+    </form>
+</div>
 <div id="shelves-placeholder">
   <a href="/myshop/create-item/{{shop.id}}">
     <div class="circle"><i class="fas fa-plus"></i></div>
   </a>
   <div>Add items to your store</div>
 </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="grid-container" data-shop-id="{{shop._id}}">
   {{#each shop.list_products}}
   <div class="block display-block">
@@ -43,6 +75,7 @@
     </div>
   </div>
   {{/each}}
+</div>
 </div>
 <div id="delete-modal" class="modal">
   <span class="close" title="Close Modal"
