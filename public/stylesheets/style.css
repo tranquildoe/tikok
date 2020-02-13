@@ -338,7 +338,7 @@ a {
   height: 50px;
   background-color: rgb(5, 110, 93);
   border-radius: 50px;
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
   color: whitesmoke;
   padding-left: 4vh;
   font-size: 2.5vh
@@ -408,9 +408,9 @@ a {
 }
 
 
-.logoandtext:hover {
-text-decoration: underline;
-}
+/* .logoandtext:hover {
+/* text-decoration: underline; */
+ 
 
 .tikoktext {
   font-size: 3vh;
@@ -469,6 +469,10 @@ text-decoration: underline;
   right: 15vh;
 }
 
+.display-location {
+  width: 100%;
+  height: 400px;
+}
 
 /* Header drawing */
 
@@ -504,9 +508,9 @@ text-decoration: underline;
   top: 70%;
 }
 
-.grid-container {
+/* .grid-container {
   padding-top: 35vh;
-}
+} */
 
 /* create item */
 
@@ -638,12 +642,12 @@ text-decoration: underline;
   background-color: white; 
 }
 
-#sStartBody {
+/* #sStartBody {
 /* 
   background:linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('/bg.jpg');
   background-size: cover;
   background-repeat:no-repeat; */
-}
+*/
 #sStartBackground::before {
   background-image: url('/tropicalFruit.jpg');
   background-size: cover;
@@ -694,6 +698,7 @@ text-decoration: underline;
   opacity: 1;
   z-index: 1;
   display: flex;
+<<<<<<< HEAD
   font-size: 5.5vh;
   text-align: center;
   border-radius: 15px;
@@ -712,3 +717,7 @@ text-decoration: underline;
   width: 200px;
   text-align: center;
 }
+=======
+  font-size: 2vh;
+}
+>>>>>>> d9aaa04423f3196cdd73a177b521329201205d0e
