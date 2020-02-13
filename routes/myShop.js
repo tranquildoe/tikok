@@ -64,12 +64,12 @@ router.get("/delete-item/:shop_id/:id", (req, res, next) => {
 });
 
 router.post("/edit-item/:shop_id/:id", (req, res, next) => {
-  const { description, name, prix, category } = req.body.newInfos;
+  const { description, name, price, category } = req.body.newInfos;
   console.log(description, name);
   productModel
     .findByIdAndUpdate(
       req.params.id,
-      { description, name, prix, category },
+      { description, name, price, category },
       { new: true }
     )
     .then(updatedProduct => {

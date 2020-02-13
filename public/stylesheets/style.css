@@ -523,3 +523,9 @@ text-decoration: underline;
   font-size: 2vh;
 }
 
+.titletoadd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
