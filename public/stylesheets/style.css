@@ -27,7 +27,7 @@ a {
 .add-picture {
   width: 20vh;
   height: 20vh;
-  background-image: url(../decouvrir-fruits-tropicaux-martinique.jpg);
+  background-image: url('../tropicalFruit.jpg');
 }
 
 .input-image {
@@ -514,9 +514,9 @@ a {
   top: 70%;
 }
 
-/* .grid-container {
+.grid-container {
   padding-top: 35vh;
-} */
+}
 
 /* create item */
 
@@ -648,14 +648,19 @@ a {
   background-color: white; 
 }
 
-/* #sStartBody {
-/* 
-  background:linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('/bg.jpg');
+ 
+  /* width: 100%;
+  height: 91.9vh;
+  z-index: 0;
+  background-color: rgba(0,0,0,0.65);  */
+
+
+  /* background:linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('/bg.jpg');
   background-size: cover;
   background-repeat:no-repeat; */
-*/
+
 #sStartBackground::before {
-  background-image: url('/tropicalFruit.jpg');
+  background-image: url('/fruitsopacity.png');
   background-size: cover;
   content: "";
   display: block;
@@ -665,16 +670,26 @@ a {
   width: 100%;
   height: 100%;
   z-index: -2;
-  opacity: 0.4;
+  opacity: 0.2;  
   }
 
 #sPicCover {
   width: 100%;
   height: 91.9vh;
   z-index: 0;
-  background-color: rgba(0, 0, 0, 0.65);
-  /* opacity: 0.58; */
+  position: relative;
+  /* background-color: rgba(0, 0, 0, 0.65); */ 
+  /* background-image: url('../tropicalFruit.jpg');
+  opacity: 0.58; */
 }
+
+/* #sCover2 {
+  width: 100%;
+  height: 91.9vh;
+  z-index:0.5;
+  background-color: rgba(0,0,0,0.65);
+  opacity: 0.58
+} */
 
 #startButtonHolder {
   display: flex;
@@ -695,20 +710,23 @@ a {
   justify-content: center;
   /* align-content: center; */
   align-items: center;
+  /* opacity: 0.5; */
 }
 
 #startMission {
   width: 60%;
   height: 28%;
-  color:  white;
+  color:  black;
   opacity: 1;
-  z-index: 1;
+  z-index: 3;
   display: flex;
   font-size: 5.5vh;
   text-align: center;
   border-radius: 15px;
   align-content: center;
   padding-top: 20px;
+    position: relative;
+
 }
 
 .startButton {
