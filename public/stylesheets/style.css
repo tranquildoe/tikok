@@ -346,7 +346,7 @@ a {
   background-color: rgb(5, 110, 93);
   background-size: cover;
   height: 8vh;
-  border-bottom: 4px solid white;
+  border-bottom: 1px solid white;
 }
 
 .navbar {
@@ -443,12 +443,21 @@ text-decoration: underline;
   background-size: contain;
   position: relative;
   /* margin-top: 1vh; */
+  top: 10%;
+  background-position: 50% 75%;
+  padding-top: 10px;
+}
+
+#sBigHolder {
+  display: flex;
+  /* padding-top: 1%; */
 }
 
 /* Shop page while shopping */
 #sShopImg {
   height: auto; 
   width: 22vw; 
+  padding-left: 25px;
 }
 
 #sTitleHolder {
