@@ -478,6 +478,14 @@ text-decoration: underline;
   background-size: contain;
   position: relative;
   /* margin-top: 1vh; */
+  top: 10%;
+  background-position: 50% 75%;
+  padding-top: 10px;
+}
+
+#sBigHolder {
+  display: flex;
+  /* padding-top: 1%; */
 }
 
 /* Shop page while shopping */
