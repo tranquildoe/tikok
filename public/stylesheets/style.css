@@ -92,6 +92,30 @@ a {
   justify-content: space-between;
 }
 
+.dash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.avatar {
+  border-radius: 10vh;
+}
+
+.titledashboard {
+  font-size: 12vh;
+}
+
+
+.allfirstblock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+}
+
 .gotomy {
   display: flex;
   justify-content: center;
@@ -100,8 +124,17 @@ a {
   border-radius: 30px;
   width: 40vh;
   height: 20vh;
-  background-color:rgba(255,99,71,0.5);
+  /* background-color:rgba(255,99,71,0.5); */
+  background-color: rgb(5, 110, 93);
   font-size: 20px;
+}
+
+.shelvesandorders a {
+  color:white;
+}
+
+.shelvesandorders a:hover {
+  text-decoration: underline;
 }
 
 /* login seller */
@@ -346,7 +379,8 @@ a {
   background-color: rgb(5, 110, 93);
   background-size: cover;
   height: 8vh;
-  border-bottom: 1px solid white;
+  border-bottom: 4px solid white;
+
 }
 
 .navbar {
@@ -364,6 +398,7 @@ a {
   height: 5vh;
   margin-left: 1vh;
 }
+
 
 .logoandtext {
   display: flex;
@@ -457,7 +492,7 @@ text-decoration: underline;
 #sShopImg {
   height: auto; 
   width: 22vw; 
-  padding-left: 25px;
+  /* border-radius: 25vh; */
 }
 
 #sTitleHolder {

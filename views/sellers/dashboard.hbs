@@ -1,3 +1,4 @@
+
 <header class="dashboard-header">
   <nav class="navbar">
     <div class="logoandtext">
@@ -11,17 +12,22 @@
       <ul class="navlist">
         <li><a href="/"> Home </a></li>
         <li><a href="/myshop/dashboard/{{shop.id}}"> My Dashboard </a></li>
-        <li><a href="/" >Log Out</a></li>
+        <li><a href="/logout" >Log Out</a></li>
       </ul>
     </div>
   </nav>
 </header>
 
+
+
+
+<div class="allfirstblock">
+
 <div class="dash">
-
     <div class="titleandimage">
-    <h1 class="title">{{shop.name}}</h1>
-
+    <h1 class="titledashboard">{{shop.name}}</h1>
+    </div>
+     <div>
     <p id="dashboard-intro"> 
         <img class="avatar" src="{{shop.image}}" alt="user avatar">
     </p>
@@ -32,5 +38,7 @@
 
         <a href="/myshop/myorders/{{shop._id}}" class="gotomy"> My Orders</a>
     </div>
+</div>
+
 </div>
 

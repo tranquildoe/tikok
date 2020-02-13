@@ -26,7 +26,7 @@ h3 {
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     color: white;
     height: 60vh;
 }
@@ -45,6 +45,7 @@ h3 {
 }
 #product-image {
     border-radius: .5em;
+    position: relative;
 }
 #product-image:hover {
     filter: blur(2px)
@@ -61,7 +62,8 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin: 2 auto;
+
 }
 
 .circle-add-image .fa-plus {
@@ -152,4 +154,9 @@ select option {
     color: rgb(197, 58, 7);
 }
 
-
+.firstsmallcontainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}

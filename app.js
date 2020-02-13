@@ -76,7 +76,15 @@ app.use(function exposeLoginStatus(req, res, next) {
   next();
 });
 
+// app.use(function protectAdminRoute(req, res, next) {
+//   if (req.session.currentUser && req.session.currentUser.role === "admin") next();
+//   else res.redirect("/");
+// })
 
+// app.use(function protectRoute(req, res, next) {
+//   if (req.session.currentUser) next();
+//   else res.redirect("/");
+// })
 
 app.use("/", indexRouter);
 app.use("/shopping", custRouter);
