@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const productModel = require("../models/product");
 const sellerModel = require("../models/seller");
 const shopModel = require("../models/shop");
+const orderModel = require("../models/order");
 
 router.get('/', function(req, res, next) {
   res.render('index');
@@ -32,9 +33,29 @@ productModel
 .catch(next)
 });
 
-router.get('/shopping/:cat', function(req, res, next) {
+router.get('/shopping/order-item/:shop_id/:item_id', function(req, res, next) {
+  console.log(req.session)
+  const cust = req.session.currentUser.id;
+  const shop = req.params.shop_id;
+
+  orderModel.findOne({customer_id : cust, shop_id: shop})
+  .then (orderExists => {
+    console.log(orderExists)
+    if (orderExists) {
+      orderModel.findOneAndUpdate(orderExists, {$push: {list_products: req.params.item_id}})
+      then(dbRes => res.json(dbRes))
+    } else { orderModel.create({shop_id: shop,customer_id: cust, list_products: [req.params.item_i]}).then(dbRes => res.json(dbRes))}
+  })
+
+  // customerModel.findByIdAndUpdate(, { orders: {$push: {baskets :req.params.item_id }}})
+  // .then(dbRes => console.log(dbRes))
+
+
+router.get('/shopping/category/:cat', function(req, res, next) {
   productModel.find({category : req.params.cat, isTemplate: false}).populate('id_shop')
   .then(products => res.render('platform/category', {products}))
   });
+
+})
 
 module.exports = router;

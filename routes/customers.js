@@ -14,20 +14,20 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", (req, res, next) => {
-  const newclient = {
+  const newClient = {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password
   };
-  console.log(newClient)
+
     // if (req.file) newClient.avatar = req.file.secure_url;
   if (
     !newClient.username ||
     !newClient.email ||
     !newClient.password
   ) {
-    req.flash("error", "Please fill the inputs");
-    res.redirect("/shopping/customer/signup")
+    req.flash("error", "Please fill all the inputs");
+    res.redirect("/shopping/signup")
     return;
   } else {
     customerModel
@@ -37,7 +37,6 @@ router.post("/signup", (req, res, next) => {
     .then(dbRes => {
       if (dbRes) return res.redirect("/shopping/signup"); //
       req.flash("error", "This email already exists");
-      console.log("signuuuuuup")
       const salt = bcrypt.genSaltSync(10); // https://en.wikipedia.org/wiki/Salt_(cryptography)
       const hashed = bcrypt.hashSync(newClient.password, salt); // generates a secured random hashed password
       newClient.password = hashed; // new newClient is ready for db
@@ -60,7 +59,7 @@ router.post("/login", (req, res, next) => {
   const user = req.body;
   if (!user.email || !user.password) {
     req.flash("error", "Please fill everything");
-    return res.redirect("/shopping/customer/login");
+    return res.redirect("/shopping/login");
   }
 
   customerModel
@@ -70,32 +69,23 @@ router.post("/login", (req, res, next) => {
     .then(dbRes => {
       if (!dbRes) {
         req.flash("error", "No user found with this e-mail");
-        return res.redirect("/shopping/customer/login");
+        return res.redirect("/shopping/login");
       }
-      // user has been found in DB !
+  
       if (bcrypt.compareSync(user.password, dbRes.password)) {
-        // req.session.currentUser = user;
-        // encryption says : password match succes
-
+  
         const {
           _doc: clone
         } = {
           ...dbRes
-        }; // make a clone of db user
-
-
-        delete clone.password; // remove password from clone
-        // // console.log(clone);
-
-        req.session.currentUser = clone; // user is now in session... until session.destroy
-        console.log("LOGIN")
+        }; 
+        delete clone.password;
+        req.session.currentUser = clone;
         return res.redirect("/home");
-
-
       } else {
         req.flash("error", "wrong credentials");
 
-        return res.redirect("/shopping/customer/login");
+        return res.redirect("/shopping/login");
       }
     })
     .catch(next);
@@ -135,9 +125,10 @@ router.get("/shop/:shop_id/:id", (req, res, next) => {
       const filteredProducts = copy.filter(p => p._id !== req.params.id);
 
       res.render("platform/product", {
-        shop: filteredProducts,
+        shop: dbRes[0],
+        otherProducts: filteredProducts,
         product: dbRes[1],
-      })
+        scripts: ["product"]})
 
     })
     .catch(next)

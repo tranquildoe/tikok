@@ -14,9 +14,15 @@ const customerSchema = new Schema({
   password: String,
   location :{type: { type: String }, coordinates: [Number] }, // Synthax for Google map coordonates
   orders : {
-    baskets : [Schema.Types.ObjectId],
-    active_orders : [Schema.Types.ObjectId],
-    past_orders : [Schema.Types.ObjectId]
+    baskets : [ {
+      type: Schema.Types.ObjectId,
+      ref: 'Order'}],
+    active_orders : [{
+      type: Schema.Types.ObjectId,
+      ref: 'Order'}],
+    past_orders : [{
+      type: Schema.Types.ObjectId,
+      ref: 'Order'}]
   }
 });
 

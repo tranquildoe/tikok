@@ -3,8 +3,12 @@ const Schema = mongoose.Schema; // adding reg ex for contact field
 
 const orderSchema = new Schema({
 ref : String,
-store_id : Schema.Types.ObjectId,
-customer_id: Schema.Types.ObjectId,
+shop_id : {
+    type: Schema.Types.ObjectId,
+    ref: 'Shop'},
+customer_id: {
+    type: Schema.Types.ObjectId,
+    ref: 'Customer'},
 list_products: [{product_id :Schema.Types.ObjectId,
                  quantity: Number}],
 creation_date : Date,
