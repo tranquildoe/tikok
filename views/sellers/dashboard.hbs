@@ -1,25 +1,33 @@
-  <header class="dashboard-header">
-    <nav class="navbar">
-        <div class="logoandtext">
-            <img src="/coq.png" alt="imgcoq" class="coqimg">
-            <p class="tikoktext">tikok</p>
-        </div>
-        <div class="navtext">
-      <ul class="navlist">
-        <li><a href=""> My Products </a></li>
-        <li><a href=""> My Orders</a></li>
-        <li><a href="/logout"> log out </a></li>
-      </ul>
-      </div>
-    </nav>
 
-  </header>
+<header class="dashboard-header">
+  <nav class="navbar">
+    <div class="logoandtext">
+      {{!-- <img src="/coq.png" alt="imgcoq" class="coqimg"> --}}
+
+      <p class="tikoktext">tikok</p>
+      <img class="coqimg" alt="imgcoq"
+        src="https://res.cloudinary.com/dyvosdvps/image/upload/v1581546572/tikok-pictures/Sans_titre_1_b7shu3.png">
+    </div>
+    <div class="navtext">
+      <ul class="navlist">
+        <li><a href="/"> Home </a></li>
+        <li><a href="/myshop/dashboard/{{shop.id}}"> My Dashboard </a></li>
+        <li><a href="/logout" >Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+
+
+<div class="allfirstblock">
 
 <div class="dash">
-
     <div class="titleandimage">
-    <h1 class="title">{{shop.name}}</h1>
-
+    <h1 class="titledashboard">{{shop.name}}</h1>
+    </div>
+     <div>
     <p id="dashboard-intro"> 
         <img class="avatar" src="{{shop.image}}" alt="user avatar">
     </p>
@@ -30,5 +38,7 @@
 
         <a href="/myshop/myorders/{{shop._id}}" class="gotomy"> My Orders</a>
     </div>
+</div>
+
 </div>
 

@@ -1,30 +1,31 @@
 <div class="tout">
 <section class="sign form-container">
   <header class="form-header">
-    <h1 class="form-title">Bonjour</h1>
+    <h1 class="form-title">Bèl Bonjou</h1>
   </header>
+  <br>
      {{> flashMessage }}
 <br>
   <form method="post" action="/shopping/login" id="form_cust">
     <div class="form-item-wrapper flexed-item">
       <label for="email" class="label-ref label">Email</label>
-      <input id="email" name="email" type="email" class="inputlogin" placeholder="albert.biceps@gmail.com" required>
+      <input id="email" name="email" type="email" class="inputlogin" placeholder="ex:albert.biceps@gmail.com" required>
     </div>
     <br>
     <div class="form-item-wrapper flexed-item">
-      <label for="password" class="label-ref label">Password</label>
-      <input id="password" name="password" type="password"  class="inputlogin" placeholder="••••••">
+      <label for="password" class="label-ref label">Mot de passe</label>
+      <input id="password" name="password" type="password"  class="inputlogin" placeholder="Mot de passe">
     </div>
 
     <br>
 
     <div class="btnlogin">
-    <button class="submit-button">Log in</button>
+    <button class="submit-button">Se connecter</button>
     </div>
 
   <br>
   </form>
   <br>
-  <p class="form-sub-infos">Don't have an account yet ? <a href="/customer/signup" class="button-link-form"></a>Sign Up</p>
+  <p class="form-sub-infos">Nouveau client ? <a href="/shopping/signup" class="button-link-form">Créez un compte</p></a>
 </section>
 </div>

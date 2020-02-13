@@ -42,8 +42,8 @@ a {
 
 /* Flash messages */
 .success {
-  width: 20vh;
-  height: 5vh;
+  width: 24vh;
+  height: 8vh;
   border: solid 1px black;
   background-color: green;
   color: white;
@@ -54,10 +54,11 @@ a {
 
 /* Flash messages */
 .error {
-  width: 20vh;
-  height: 5vh;
+  width: 24vh;
+  height: 8vh;
   border: solid 1px black;
-  background-color: #f08080;
+  background-color: red;
+  border-radius: 2vh;
   color: white;
   display: flex;
   justify-content: center;
@@ -91,6 +92,30 @@ a {
   justify-content: space-between;
 }
 
+.dash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.avatar {
+  border-radius: 10vh;
+}
+
+.titledashboard {
+  font-size: 12vh;
+}
+
+
+.allfirstblock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+}
+
 .gotomy {
   display: flex;
   justify-content: center;
@@ -99,8 +124,17 @@ a {
   border-radius: 30px;
   width: 40vh;
   height: 20vh;
-  background-color:rgba(255,99,71,0.5);
+  /* background-color:rgba(255,99,71,0.5); */
+  background-color: rgb(5, 110, 93);
   font-size: 20px;
+}
+
+.shelvesandorders a {
+  color:white;
+}
+
+.shelvesandorders a:hover {
+  text-decoration: underline;
 }
 
 /* login seller */
@@ -110,7 +144,6 @@ a {
 	justify-content: center;
 	align-items: center;
   align-content: center;
-  margin-top: 15vh;
 }
 
 .form-container {
@@ -119,6 +152,7 @@ a {
   justify-content: center;
   align-items: center;
   align-content: center;
+  margin-top: 5vh;
 }
 
 .form-title {
@@ -127,16 +161,21 @@ a {
 
 .inputlogin {
   height: .1rem;
-  border-radius: 30px;
-  border : 2px solid white;
-  background-color: tomato;
+  /* border-radius: 30px; */
+  border : none;
+  border-bottom : 2px solid rgb(202, 73, 50);
+  background-color: white;
   width: 35em;
   padding: 4%;
-  color: white;
+  color: black;
+  font-size: 2vh;
 }
 
+.formlogin {
+  width: 100%;
+}
 .inputlogin::placeholder {
-  color: white;
+  color: grey;
 }
 
 .form-item-wrapper{
@@ -172,7 +211,12 @@ a {
   color: tomato;
   font-size: 3vh;
   padding: 2%;
-  margin-top: 2%;
+  margin-top: 1%;
+}
+
+.submit-button:hover {
+  background-color: tomato;
+  color: white
 }
 
 
@@ -184,11 +228,15 @@ a {
   font-size: 2vh;
 }
 
-/* sign up seller */
+
+
+
+
+/* sign up seller
 
 .signupform {
-  margin-top: 15vh;
-}
+  /* margin-top: 10vh; */
+
 
 .form-info {
   font-size: 4vh;
@@ -200,25 +248,50 @@ a {
 
 .formform {
     width: 100%;
-    height: min-content;
+    /* height: min-content; */
     margin: 1%;
     /* display: flex; */
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
 }
 
 .inputsignup {
   height: .1rem;
-  border-radius: 30px;
-  border : 2px solid white;
-  background-color: tomato;
+  /* border-radius: 30px; */
+  border : none;
+  border-bottom : 2px solid rgb(202, 73, 50);
+  background-color: white;
   width: 35em;
   padding: 4%;
-  color: white;
+  color: black;
+  font-size: 2vh;
+
 }
 
 .inputsignup::placeholder {
+  color: grey;
+}
+
+.btnlogin2 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.submit-button2 {
+  border-radius: 50px;
+  height: 9vh;
+  width: 40vh;
+  color: tomato;
+  font-size: 3vh;
+  padding: 2%;
+  margin-top: 1%;
+}
+
+.submit-button2:hover {
   color: white;
+  background-color: tomato;
 }
 
 
@@ -233,7 +306,7 @@ a {
 /* shops products */
 
 .shopname {
-  font-size: 10vh;
+  font-size: 10vw;
 }
 
 /* shops products description */
@@ -293,7 +366,7 @@ a {
 /* dashboard seller */
 
 .dashboard-header {
-  position: fixed;
+  /* position: fixed; */
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
@@ -301,10 +374,13 @@ a {
   /* justify-content: space-between;  */
   width: 100%;
   /* background-color: rgb(20, 175, 175);  */
-  border-radius: 3vh 0; 
-  background-image: url('/beach2.png');
+  border-radius: 0vh 0vh 0vh 0vh; 
+  /* background-image: url('/beach2.png'); */
+  background-color: rgb(5, 110, 93);
   background-size: cover;
   height: 8vh;
+  border-bottom: 4px solid white;
+
 }
 
 .navbar {
@@ -320,18 +396,25 @@ a {
 .coqimg {
   width: 6vh;
   height: 5vh;
-  margin-left: 3vh;
+  margin-left: 1vh;
 }
+
 
 .logoandtext {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 }
 
+
+.logoandtext:hover {
+text-decoration: underline;
+}
+
 .tikoktext {
-  font-size: 4vh;
+  font-size: 3vh;
   color: white;
+  margin-left: 3vh;
 }
 /* 
 .navtext {
@@ -357,6 +440,11 @@ a {
     font-size: 3vh;
  }
 
+ .navlist li:hover {
+   text-decoration: underline;
+   color: white;
+ }
+
  .navlist a {
   text-decoration: none;
   color: white;
@@ -380,4 +468,202 @@ a {
 .display-location {
   width: 100%;
   height: 400px;
+}
+
+/* Header drawing */
+
+#drawingHolder {
+  background-image: url('https://res.cloudinary.com/dyvosdvps/image/upload/v1581595867/tikok-pictures/drawingWhite_cp1xro.png');
+  /* option in black https://res.cloudinary.com/dyvosdvps/image/upload/v1581595716/tikok-pictures/drawingBlack_hkcsff.png */
+  background-color: rgb(5, 110, 93);
+  width: 100vw;
+  height: 30vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  /* margin-top: 1vh; */
+  top: 10%;
+  background-position: 50% 75%;
+  padding-top: 10px;
+}
+
+#sBigHolder {
+  display: flex;
+  /* padding-top: 1%; */
+}
+
+/* Shop page while shopping */
+#sShopImg {
+  height: auto; 
+  width: 22vw; 
+  /* border-radius: 25vh; */
+}
+
+#sTitleHolder {
+  position: absolute;
+  top: 70%;
+}
+
+.grid-container {
+  padding-top: 35vh;
+}
+
+/* create item */
+
+
+/* #product-image {
+  border-radius: .5em;
+  position: relative;
+}
+#product-image:hover {
+  filter: blur(2px)
+}
+
+.circle-add-image {
+  left: calc(50% - 5vh);
+  top: calc(50% - 5vh);
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 10vh;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.circle-add-image .fa-plus {
+  font-size: 4vh ;
+  color: black;
+}
+
+.everything {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+} */
+
+.everything {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.imageandplus {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5vh;
+}
+
+
+.image-upload {
+  position: relative;
+}
+#product-image {
+  border-radius: .5em;
+}
+#product-image:hover {
+  filter: blur(2px)
+}
+
+.circle-add-image {
+  position: absolute;
+  left: calc(50% - 5vh);
+  top: calc(50% - 5vh);
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 10vh;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.circle-add-image .fa-plus {
+  font-size: 4vh ;
+  color: white;
+}
+
+.product-descr {
+  height: .1rem;
+  /* border-radius: 30px; */
+  border : none;
+  border-bottom : 2px solid black;
+  background-color: white;
+  width: 20em;
+  padding: 4%;
+  color: black;
+  font-size: 2vh;
+}
+
+.titletoadd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Start page */
+
+.sStartNav {
+  display: flex;
+  flex-direction: row;
+}
+
+#sStartBody {
+/* 
+  background:linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('/bg.jpg');
+  background-size: cover;
+  background-repeat:no-repeat; */
+}
+#sStartBackground::before {
+  background-image: url('/tropicalFruit.jpg');
+  background-size: cover;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  opacity: 0.4;
+  }
+
+#sPicCover {
+  width: 100%;
+  height: 91.9vh;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.356);
+  /* opacity: 0.58; */
+}
+
+#startButtonHolder {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 25%;
+}
+
+#startContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#startMission {
+  width: 100%;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.616);
+  background-color: white;
+  opacity: 1;
+  z-index: 1;
+  display: flex;
+  font-size: 2vh;
 }

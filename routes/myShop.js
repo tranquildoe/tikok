@@ -64,12 +64,12 @@ router.get("/delete-item/:shop_id/:id", (req, res, next) => {
 });
 
 router.post("/edit-item/:shop_id/:id", (req, res, next) => {
-  const { description, name, prix, category } = req.body.newInfos;
+  const { description, name, price, category } = req.body.newInfos;
   console.log(description, name);
   productModel
     .findByIdAndUpdate(
       req.params.id,
-      { description, name, prix, category },
+      { description, name, price, category },
       { new: true }
     )
     .then(updatedProduct => {
@@ -135,5 +135,17 @@ router.get("/dashboard/:shop_id", (req, res, next) => {
     );
     console.log("here", req.params.shop_id)
   })
+
+// search bar on my shelves
+
+router.get('/shopping/search', function(req, res, next) {
+  console.log(req.query)
+productModel
+.find({name: { $regex: req.query.q, $options: "i" }, isTemplate : false}).populate('id_shop')
+.then(dbRes => res.json(dbRes))
+.catch(next)
+});
+
+
 
 module.exports = router;
