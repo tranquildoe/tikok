@@ -1,5 +1,5 @@
 <div class="grid-container">
-    <div class="block display-block">
+    <div class="block display-block" data-shop-id="{{shop.id}}">
 
         <img class="product-image" alt="{{product.name}}" src={{product.image}} width="300">
         <div class="infos-placeholder" data-item-id="{{product.id}}">
@@ -13,9 +13,9 @@
         </div>
         </div>
 
-      <a href="/"><button class="btnorder">ORDER</button></a>
+      <a><button id="order-button" class="btnorder">ORDER</button></a>
 
-{{#each shop}}
+{{#each otherProducts}}
       <div>
         <img src="{{this.image}}" alt="" width="300"> 
         <h3>{{this.name}}</h3>     
