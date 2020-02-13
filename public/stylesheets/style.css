@@ -3,12 +3,14 @@
 body {
   padding: 0;
   margin: 0;
+  color: rgb(29, 28, 28);
 }
 body * {
   padding: 0;
   margin: 0;
   font: 1em;
   font-family: 'Muli', sans-serif;
+  
 
 }
 
@@ -256,4 +258,35 @@ a {
 
 .priceofproduct {
   margin-left: 27vh;
+}
+
+#search-bar {
+  width: 45vw;
+  height: 50px;
+  background-color: rgb(5, 110, 93);
+  border-radius: 50px;
+  margin-top: 10vh;
+  color: whitesmoke;
+  padding-left: 4vh;
+  font-size: 2.5vh
+}
+
+#search-bar::placeholder {
+  color: beige;
+  font-size: 2.5vh;
+}
+
+#search-button {
+  background-color: rgb(5, 110, 93);
+  border: none;
+  font-size: 1.2em;
+  color: white;
+  position: absolute;
+  bottom: 0.8em;
+  right: 2em;
+}
+
+.search-placeholder{
+  position: relative;
+  height: max-content;
 }

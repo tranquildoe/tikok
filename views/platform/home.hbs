@@ -1,23 +1,29 @@
 {{!-- {{>navBarCustomer}} --}}
 <header id="header-home">
-    <div class="header-background">
+    <div>
+    <div>
     <h1 id="title">tikok</h1>
+    <h2>Consommez autrement,<br>Achetez auprès de commerçants <div id="indépendants">INDEPENDANTS</div></h2>
     </div>
     {{>searchBar}}
+    </div>
+    <img id="header-logo" src="https://res.cloudinary.com/dyvosdvps/image/upload/v1581546572/tikok-pictures/Sans_titre_1_b7shu3.png">
 </header>
 <section id="main-home">
-        <h2>Categories</h2>
+        <h2>Toutes vos courses ...</h2>
+        <hr>
     <div class="display-categories">
-        <a href="/shopping/fruits"><div id="fruits-block" class="category-block">Fruits</div></a>
-        <a href="/shopping/vegetables"><div id="vegetables-block" class="category-block">Vegetables</div></a>
-        <a href="/shopping/fishes"><div id="fishes-block" class="category-block">Fishes & Seafood</div></a>
-        <a href="/shopping/meats"><div id="meats-block" class="category-block">Meats</div></a>
-        <a href="/shopping/grocery"><div id="grocery-block" class="category-block">Grocery</div></a>
-        <a href="/shopping/artisan"><div id="artisan goods" class="category-block">Artisan goods</div></a>
-        <a href="/shopping/other"><div id="other-block" class="category-block">Other</div></a>
+        <a href="/shopping/fruits"><div id="fruits-block" class="category-block"><div class="word-placeholder">Fruits</div></div></a>
+        <a href="/shopping/vegetables"><div id="vegetables-block" class="category-block"><div class="word-placeholder">Légumes</div></div></a>
+        <a href="/shopping/fishes"><div id="fishes-block" class="category-block"><div class="word-placeholder">Fruits de mer</div></div></a>
+        <a href="/shopping/meats"><div id="meats-block" class="category-block"><div class="word-placeholder">Viandes</div></div></a>
+        <a href="/shopping/grocery"><div id="grocery-block" class="category-block"><div class="word-placeholder">Épiceries</div></div></a>
+        <a href="/shopping/artisan"><div id="artisan goods" class="category-block"><div class="word-placeholder">Artisanat</div></div></a>
+        <a href="/shopping/other"><div id="other-block" class="category-block"><div class="word-placeholder">Autres</div></div></a>
     </div>
     <div id="shops">
-    <h2>Some Shops</h2>
+    <h2>Quelques Boutiques</h2>
+    <hr>
     <div id="someShops">
         {{#each sixShops}}
         <a href="/shopping/shop/{{this.id}}">

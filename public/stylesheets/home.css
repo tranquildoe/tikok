@@ -1,19 +1,25 @@
+
 #header-home {
-    background-image: url('https://res.cloudinary.com/dyvosdvps/image/upload/v1581515139/tikok-pictures/fruits_header_bwq4tv.jpg');
+    /* background-image: url('https://res.cloudinary.com/dyvosdvps/image/upload/v1581515139/tikok-pictures/fruits_header_bwq4tv.jpg'); */
+    background-color: rgb(5, 110, 93);
     background-size: cover;
     background-position: 0 0;
-    height: 55vh;
+    height: 90vh;
     color: white;
-}
- .header-background {
-    height: 100%;
-    width: 100%;
-    background-color: rgba(31, 30, 30, 0.698);
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
- }
+    position: relative;
+    padding-left: 10vh;
+}
+
+#header-home > div {
+    height: 100%;
+}
+#header-home h2 {
+    color: rgb(227, 246, 198)
+}
 
  #title {
      font-size: 15em;
@@ -21,10 +27,39 @@
 
  }
 
+ #indépendants{
+     display: inline-block;
+     background-color: white;
+     color: tomato;
+     padding:1.5%;
+     transform: rotate(-6deg);
+     box-shadow: 1.5px 1.5px 1.5px black;
+     margin: 1%
+ }
+ #header-logo {
+     position: absolute;
+     bottom: -15vh;
+     right: 0.5vw;
+     height: 40em;
+ }
+
  .category-block {
      width: 40vh;
      height: 30vh;
      box-shadow: 5px 5px 5px grey;
+     filter: grayscale(50%);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-weight: bolder;
+     font-size: 2em;
+     text-align: center;
+ }
+
+ .word-placeholder {
+     background-color: white;
+     padding: 3%;
+     border-radius: 50px;
  }
 
  #fruits-block {
@@ -54,16 +89,38 @@
 }
 
 .display-categories {
+    padding: 11vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40vh, 1fr));
     grid-gap: 5vh;
 }
+#main-home h2{
+    font-size: 3em;
+    color: rgb(206, 68, 43);
+}
 
+#main-home {
+    padding: 6vh;
+}
+
+hr {
+    margin-top: 1.5vh;
+    width: 10%;
+    border: 2px solid;
+    color : rgb(5, 110, 93)
+}
 #someShops {
     display: flex;
     overflow: scroll;
+    background-color: rgba(191, 231, 152, 0.746);
 }
 
 .shop-block {
     margin : 3vh;
 }
+
+.category-block:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+}
+

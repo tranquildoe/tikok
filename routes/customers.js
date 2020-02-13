@@ -11,18 +11,16 @@ router.get('/', function (req, res, next) {
   res.send('respond with a resource');
 });
 
-<<<<<<< HEAD
 router.get("/shop/:shop_id", (req, res, next) => {
-    shopModel.findById(req.params.shop_id).populate("list_products")
-=======
+    shopModel.findById(req.params.shop_id).populate("list_products")})
 
 // sign up customer
 
-router.get("/customer/signup", (req, res) => {
+router.get("/signup", (req, res) => {
   res.render("customer/signup");
 });
 
-router.post("/customer/signup", (req, res, next) => {
+router.post("/signup", (req, res, next) => {
   const newclient = {
     username: req.body.username,
     email: req.body.email,
@@ -68,7 +66,6 @@ router.post("/customer/signup", (req, res, next) => {
 
 router.get("/shop/:shop_id", (req, res, next) => {
   shopModel.findById(req.params.shop_id).populate("list_products")
->>>>>>> 20635754f12bd37d377070fdba116edbf20432e9
     .then(shop => {
       res.render("platform/shop", {
         shop
