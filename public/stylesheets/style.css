@@ -338,7 +338,7 @@ a {
   height: 50px;
   background-color: rgb(5, 110, 93);
   border-radius: 50px;
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
   color: whitesmoke;
   padding-left: 4vh;
   font-size: 2.5vh
@@ -407,9 +407,9 @@ a {
 }
 
 
-.logoandtext:hover {
-text-decoration: underline;
-}
+/* .logoandtext:hover {
+/* text-decoration: underline; */
+ 
 
 .tikoktext {
   font-size: 3vh;
@@ -500,9 +500,9 @@ text-decoration: underline;
   top: 70%;
 }
 
-.grid-container {
+/* .grid-container {
   padding-top: 35vh;
-}
+} */
 
 /* create item */
 
