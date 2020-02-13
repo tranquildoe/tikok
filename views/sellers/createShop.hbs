@@ -1,17 +1,24 @@
 <div class="body-container">
   <h1>{{shop.name}}</h1>
   <h3>Your shop online</h3>
+
   <div id="first-container">
     <form action="/myshop/create-shop/{{shop.id}}"id="form-create-shop" data-shop-id={{shop.id}} enctype="multipart/form-data">
+
+    <div class="firstsmallcontainer">
       <div class="image-upload image-container">
         <label for="file-input">
+          <div class="imageforcreatesop">
           <img id="product-image" src={{shop.image}} width="200">
+          </div>
           <div class="circle-add-image">
             <i class="fas fa-plus"></i>
           </div>
         </label>
         <input class="input" id="file-input" type="file" name="image" value={{shop.image}}>
       </div>
+    </div>
+
       <div class='input-container type-container'>
         <label for="type">Shop Type</label>
         <select id="select" class="input" id="type" name="type">
@@ -34,9 +41,45 @@
         <label for="phone">Phone</label>
         <input class="input" name="phone" id="phone" placeholder="How customers can join you ?">
       </div>
+      <div class="buttonsubmit">
       <button id="submit-button">Submit infos</button>
+      </div>
     </form>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div id="shelves-placeholder">
     <h2>Your shelves are still empty !</h2>
     <a href="/myshop/create-item/{{shop.id}}">
