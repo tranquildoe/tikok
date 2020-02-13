@@ -1,37 +1,57 @@
-<div class="signupform">
-<section class="sign form-container">
-  <header class="form-header">
-    <h1 class="form-title">Sign Up</h1>
-  </header>
-  <br>
- 
-  <form method="post" action="/myshop/signup" id="form_seller">
-  <h2 class="form-info">About your shop</h2>
-    <div class="formform">
-      <label for="name" class="lbl">Shop Name</label>
-      <input id="name" name="name" type="text" class="inputsignup" placeholder="Passion">
-    </div>
-    <br>
-    <h2 class="form-info">About you</h2>
-    <div class="formform">
-      <label for="username" class="lbl">Name</label>
-      <input id="username" name="username" type="text" class="inputsignup" placeholder="Jean">
-    </div>
-    <div class="formform">
-      <label for="email" class="lbl">Email</label>
-      <input id="email" name="email" type="email" class="inputsignup" placeholder="jean.desmoulins@gmail.com">
-    </div>
-    <div class="formform">
-      <label for="password" class="lbl">Password</label>
-      <input id="password" name="password" type="password" class="inputsignup" placeholder="••••••">
-    </div>
-    <div class="btnlogin">
-    <button class="submit-button">Create Shop</button>
-  </form>
-  </div>
-<br>
-  {{> flashMessage }}
+<header class="dashboard-header">
+  <nav class="navbar">
+    <div class="logoandtext">
+      {{!-- <img src="/coq.png" alt="imgcoq" class="coqimg"> --}}
 
-  <p class="form-sub-infos">Already have an account ? <a href="/myshop/login" class="button-link-form">Sign In</a></p>
-</section>
-</div>
+      <p class="tikoktext">tikok</p>
+      <img class="coqimg" alt="imgcoq"
+        src="https://res.cloudinary.com/dyvosdvps/image/upload/v1581546572/tikok-pictures/Sans_titre_1_b7shu3.png">
+    </div>
+    <div class="navtext">
+      <ul class="navlist">
+        <li><a href="/"> Home </a></li>
+        <li><a href="/myshop/login"> Se connecter</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div class="tout">
+  <div class="signupform">
+    <section class="sign form-container">
+      <header class="form-header">
+        <h1 class="form-title">Sign Up</h1>
+      </header>
+      <br>
+
+      <form method="post" action="/myshop/signup" id="form_seller">
+        <h2 class="form-info">About your shop</h2>
+        <div class="formform">
+          <label for="name" class="lbl">Shop Name</label>
+          <input id="name" name="name" type="text" class="inputsignup" placeholder="Passion">
+        </div>
+        <br>
+        <h2 class="form-info">About you</h2>
+        <div class="formform">
+          <label for="username" class="lbl">Name</label>
+          <input id="username" name="username" type="text" class="inputsignup" placeholder="Jean">
+        </div>
+        <div class="formform">
+          <label for="email" class="lbl">Email</label>
+          <input id="email" name="email" type="email" class="inputsignup" placeholder="jean.desmoulins@gmail.com">
+        </div>
+        <div class="formform">
+          <label for="password" class="lbl">Password</label>
+          <input id="password" name="password" type="password" class="inputsignup" placeholder="••••••">
+        </div>
+        <div class="btnlogin2">
+          <button class="submit-button2">Créez votre boutique</button>
+        </div>
+      </form>
+      <br>
+      {{> flashMessage }}
+
+      <p class="form-sub-infos"> Vous avez déja un compte ? <a href="/myshop/login" class="button-link-form">Se
+          connecter</a></p>
+    </section>
+  </div>

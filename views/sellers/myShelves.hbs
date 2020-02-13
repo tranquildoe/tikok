@@ -1,21 +1,30 @@
-  <header class="dashboard-header">
-    <nav class="navbar">
-        <div class="logoandtext">
-            <img src="/coq.png" alt="imgcoq" class="coqimg">
-            <p class="tikoktext">tikok</p>
-        </div>
-        <div class="navtext">
+<header class="dashboard-header">
+  <nav class="navbar">
+    <div class="logoandtext">
+      {{!-- <img src="/coq.png" alt="imgcoq" class="coqimg"> --}}
+
+      <p class="tikoktext">tikok</p>
+      <img class="coqimg" alt="imgcoq"
+        src="https://res.cloudinary.com/dyvosdvps/image/upload/v1581546572/tikok-pictures/Sans_titre_1_b7shu3.png">
+    </div>
+    <div class="navtext">
       <ul class="navlist">
-        <li><a href="/myshop/myshelves/{{shop.id}}"> My Shelves </a></li>
-        <li><a href=""> My Orders</a></li>
-        <li><a href="/logout"> log out </a></li>
+        <li><a href="/"> Home </a></li>
+        <li><a href="/myshop/dashboard/{{shop.id}}"> My Dashboard </a></li>
+        <li><a href="/" > Log Out</a></li>
       </ul>
-      </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
 
 <h1>My Shelves</h1>
 {{> searchBar}}
+<div id="shelves-placeholder">
+  <a href="/myshop/create-item/{{shop.id}}">
+    <div class="circle"><i class="fas fa-plus"></i></div>
+  </a>
+  <div>Add items to your store</div>
+</div>
 <div class="grid-container" data-shop-id="{{shop._id}}">
   {{#each shop.list_products}}
   <div class="block display-block">
@@ -56,19 +65,20 @@
   <h2 class="form-title">Update Item</h2>
   <form class="edit-content">
     <div class="imageToUpload">
-      <button class="add-picture"><input id="image" type='file' onchange="readURL(this);" class="input-image" /></button>
+      <button class="add-picture"><input id="image" type='file' onchange="readURL(this);"
+          class="input-image" /></button>
     </div>
-      <label for="category" name="category" class="label-name label">Category</label>
-      <select id="select" name="category" id="category" class="select input">
-        <option value="-1" name="category" disabled selected>Choose a category</option>
-        <option value="fruits" name="category">Fruits</option>
-        <option value="vegetables" name="cagetory">Vegetables</option>
-        <option value="fishes & seafood" name="category">Fishes and Seafood</option>
-        <option value="meats" name="category">Meats</option>
-        <option value="artisan goods" name="category">Artisan Goods</option>
-        <option value="growcery" name="category">Growcery</option>
-        <option value="other" name="category">Other</option>
-      </select>
+    <label for="category" name="category" class="label-name label">Category</label>
+    <select id="select" name="category" id="category" class="select input">
+      <option value="-1" name="category" disabled selected>Choose a category</option>
+      <option value="fruits" name="category">Fruits</option>
+      <option value="vegetables" name="cagetory">Vegetables</option>
+      <option value="fishes & seafood" name="category">Fishes and Seafood</option>
+      <option value="meats" name="category">Meats</option>
+      <option value="artisan goods" name="category">Artisan Goods</option>
+      <option value="growcery" name="category">Growcery</option>
+      <option value="other" name="category">Other</option>
+    </select>
     <div class="input-container">
       <label for="name">name</label>
       <input id="name" class='input' name='name' type="text">
