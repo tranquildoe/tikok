@@ -233,7 +233,7 @@ a {
 /* shops products */
 
 .shopname {
-  font-size: 10vh;
+  font-size: 10vw;
 }
 
 /* shops products description */
@@ -375,4 +375,30 @@ a {
   position : absolute;
   bottom: -5.1vh;
   right: 15vh;
+}
+
+
+/* Header drawing */
+
+#drawingHolder {
+  background-image: url('https://res.cloudinary.com/dyvosdvps/image/upload/v1581595867/tikok-pictures/drawingWhite_cp1xro.png');
+  /* option in black https://res.cloudinary.com/dyvosdvps/image/upload/v1581595716/tikok-pictures/drawingBlack_hkcsff.png */
+  background-color: rgb(5, 110, 93);
+  width: 100vw;
+  height: 30vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  margin-top: 3vh;
+}
+
+/* Shop page while shopping */
+#sShopImg {
+  height: auto; 
+  width: 22vw; 
+}
+
+#sTitleHolder {
+  position: absolute;
+  top: 70%;
 }
