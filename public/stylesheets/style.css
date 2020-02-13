@@ -362,4 +362,17 @@ a {
   color: white;
 }
 
+#common-header {
+  height: 30vh;
+  position: relative;
+}
+.common-header {
+  background-color: rgb(5, 110, 93);
+}
 
+#common-header-logo {
+  height: 30vh;
+  position : absolute;
+  bottom: -5.1vh;
+  right: 15vh;
+}
