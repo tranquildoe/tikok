@@ -1,42 +1,84 @@
-<div class="big-container product-manage-wrapper flexed-item">
-  <form action="/myshop/create-item/{{shop.id}}" method="post" class="add-product-form" enctype="multiparty/form-data">
+<header class="dashboard-header">
+<nav class="navbar">
+<div class="logoandtext">
+{{!-- <img src="/coq.png" alt="imgcoq" class="coqimg"> --}}
 
-<div class="imageToUpload">
-<button class="add-picture" ><input type='file' onchange="readURL(this);" class="input-image"/></button>
+<p class="tikoktext">tikok</p>
+<img class="coqimg" alt="imgcoq"
+src="https://res.cloudinary.com/dyvosdvps/image/upload/v1581546572/tikok-pictures/Sans_titre_1_b7shu3.png">
+</div>
+<div class="navtext">
+<ul class="navlist">
+<li><a href="/"> Home </a></li>
+<li><a href="/myshop/dashboard/{{shop.id}}"> My Dashboard </a></li>
+<li><a href="/"> Log Out</a></li>
+</ul>
+</div>
+</nav>
+</header>
+
+
+<div class="everything">
+
+
+<div class="imageandplus">
+<div class="image-upload image-container">
+{{!-- <div for="file-input"> --}}
+<img id="product-image" src={{shop.image}} width="200">
+<div class="circle-add-image">
+<i class="fas fa-plus"></i>
+</div>
+</div>
 </div>
 
+<div class="big-container product-manage-wrapper flexed-item">
+<form action="/myshop/create-item/{{shop.id}}" method="post" class="add-product-form"
+enctype="multiparty/form-data">
+<div class="titletoadd">
+<h3 class="form-title">Ajouter un produit</h3>
+</div>
+<br>
+<div class="form-item-wrapper flexed-item">
+<label for="category" name="category" class="label-name label">Category</label>
+<select name="category" id="Products" class="select">
 
-    <h3 class="form-title">Create an Item</h3>
-    <div class="form-item-wrapper flexed-item">
-      <label for="category" name="category" class="label-name label">Category</label>
-      <select name="category" id="Products" class="select">
 
-    
-    <option value="-1" name="category" disabled selected>Choose a category</option>
-    <option value="fruits" name="category">Fruits</option>
-    <option value="vegetables" name="cagetory">Vegetables</option>
-    <option value="fishes & seafood" name="category">Fishes and Seafood</option>
-    <option value="meats" name="category">Meats</option>
-    <option value="artisan goods" name="category">Artisan Goods</option>
-    <option value="growcery" name="category">Growcery</option>
-    <option value="other" name="category">Other</option>
+<option value="-1" name="category" disabled selected>Choose a category</option>
+<option value="fruits" name="category">Fruits</option>
+<option value="vegetables" name="cagetory">Vegetables</option>
+<option value="fishes & seafood" name="category">Fishes and Seafood</option>
+<option value="meats" name="category">Meats</option>
+<option value="artisan goods" name="category">Artisan Goods</option>
+<option value="growcery" name="category">Growcery</option>
+<option value="other" name="category">Other</option>
 
-    </select>
+</select>
 
-    </div>
-    <div class="form-item-wrapper flexed-item">
-      <label for="name" class="label-ref label">name</label>
-      <input id="name" name='name' type="text" class="input-text input" placeholder="ex: NV23498">
-    </div>
-    <div class="form-item-wrapper flexed-item">
-      <label for="product-price" class="label-price label">Price</label>
-      <input id="product-price" name="price" type="number" class="sneacker-price input" min="1">
-    </div>
-    <div class="form-item-wrapper flexed-item">
-      <label for="product-descr" class="label-descr label">Description</label>
-      <input id="product-descr" name="description" type="text" class="input-text input"
-        placeholder="balaou balaou balaou">
-    </div>
+</div>
 
-    <button class="button-primary add-product-btn">Add to collection</button>
-  </form>
+<div class="form-item-wrapper flexed-item">
+<label for="name" class="label-ref label">Nom</label>
+<input id="name" name="name" type="name" class="inputlogin" placeholder="ex: Pomme" required>
+</div>
+<div class="form-item-wrapper flexed-item">
+<label for="price" class="label-ref label">Prix</label>
+<input id="price" name="price" type="price" class="inputlogin" placeholder="ex: 2" required>
+</div>
+<br>
+<div class="form-item-wrapper flexed-item">
+<label for="description" class="label-ref label">Description</label>
+<input id="description" name="description" type="description" class="inputlogin" placeholder="Golden">
+</div>
+
+<br>
+
+<div class="btnlogin">
+<button class="submit-button">Ajouter</button>
+</div>
+
+<br>
+</form>
+
+</div>
+
+</div>

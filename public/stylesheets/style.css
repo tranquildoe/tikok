@@ -42,8 +42,8 @@ a {
 
 /* Flash messages */
 .success {
-  width: 20vh;
-  height: 5vh;
+  width: 24vh;
+  height: 8vh;
   border: solid 1px black;
   background-color: green;
   color: white;
@@ -54,10 +54,11 @@ a {
 
 /* Flash messages */
 .error {
-  width: 20vh;
-  height: 5vh;
+  width: 24vh;
+  height: 8vh;
   border: solid 1px black;
-  background-color: #f08080;
+  background-color: red;
+  border-radius: 2vh;
   color: white;
   display: flex;
   justify-content: center;
@@ -110,7 +111,6 @@ a {
 	justify-content: center;
 	align-items: center;
   align-content: center;
-  margin-top: 15vh;
 }
 
 .form-container {
@@ -119,6 +119,7 @@ a {
   justify-content: center;
   align-items: center;
   align-content: center;
+  margin-top: 5vh;
 }
 
 .form-title {
@@ -127,16 +128,21 @@ a {
 
 .inputlogin {
   height: .1rem;
-  border-radius: 30px;
-  border : 2px solid white;
-  background-color: tomato;
+  /* border-radius: 30px; */
+  border : none;
+  border-bottom : 2px solid rgb(202, 73, 50);
+  background-color: white;
   width: 35em;
   padding: 4%;
-  color: white;
+  color: black;
+  font-size: 2vh;
 }
 
+.formlogin {
+  width: 100%;
+}
 .inputlogin::placeholder {
-  color: white;
+  color: grey;
 }
 
 .form-item-wrapper{
@@ -172,7 +178,12 @@ a {
   color: tomato;
   font-size: 3vh;
   padding: 2%;
-  margin-top: 2%;
+  margin-top: 1%;
+}
+
+.submit-button:hover {
+  background-color: tomato;
+  color: white
 }
 
 
@@ -184,11 +195,15 @@ a {
   font-size: 2vh;
 }
 
-/* sign up seller */
+
+
+
+
+/* sign up seller
 
 .signupform {
-  margin-top: 15vh;
-}
+  /* margin-top: 10vh; */
+
 
 .form-info {
   font-size: 4vh;
@@ -200,25 +215,50 @@ a {
 
 .formform {
     width: 100%;
-    height: min-content;
+    /* height: min-content; */
     margin: 1%;
     /* display: flex; */
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
 }
 
 .inputsignup {
   height: .1rem;
-  border-radius: 30px;
-  border : 2px solid white;
-  background-color: tomato;
+  /* border-radius: 30px; */
+  border : none;
+  border-bottom : 2px solid rgb(202, 73, 50);
+  background-color: white;
   width: 35em;
   padding: 4%;
-  color: white;
+  color: black;
+  font-size: 2vh;
+
 }
 
 .inputsignup::placeholder {
+  color: grey;
+}
+
+.btnlogin2 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.submit-button2 {
+  border-radius: 50px;
+  height: 9vh;
+  width: 40vh;
+  color: tomato;
+  font-size: 3vh;
+  padding: 2%;
+  margin-top: 1%;
+}
+
+.submit-button2:hover {
   color: white;
+  background-color: tomato;
 }
 
 
@@ -301,8 +341,9 @@ a {
   /* justify-content: space-between;  */
   width: 100%;
   /* background-color: rgb(20, 175, 175);  */
-  border-radius: 3vh 0; 
-  background-image: url('/beach2.png');
+  border-radius: 0vh 0vh 3vh 0vh; 
+  /* background-image: url('/beach2.png'); */
+  background-color: rgb(5, 110, 93);
   background-size: cover;
   height: 8vh;
 }
@@ -320,18 +361,24 @@ a {
 .coqimg {
   width: 6vh;
   height: 5vh;
-  margin-left: 3vh;
+  margin-left: 1vh;
 }
 
 .logoandtext {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+}
+
+
+.logoandtext:hover {
+text-decoration: underline;
 }
 
 .tikoktext {
   font-size: 3vh;
   color: white;
+  margin-left: 3vh;
 }
 /* 
 .navtext {
@@ -355,6 +402,11 @@ a {
     margin-right: 3vh; 
     padding: 0 2vh;
     font-size: 3vh;
+ }
+
+ .navlist li:hover {
+   text-decoration: underline;
+   color: white;
  }
 
  .navlist a {
@@ -402,3 +454,102 @@ a {
   position: absolute;
   top: 70%;
 }
+/* create item */
+
+
+/* #product-image {
+  border-radius: .5em;
+  position: relative;
+}
+#product-image:hover {
+  filter: blur(2px)
+}
+
+.circle-add-image {
+  left: calc(50% - 5vh);
+  top: calc(50% - 5vh);
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 10vh;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.circle-add-image .fa-plus {
+  font-size: 4vh ;
+  color: black;
+}
+
+.everything {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+} */
+
+.everything {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.imageandplus {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5vh;
+}
+
+
+.image-upload {
+  position: relative;
+}
+#product-image {
+  border-radius: .5em;
+}
+#product-image:hover {
+  filter: blur(2px)
+}
+
+.circle-add-image {
+  position: absolute;
+  left: calc(50% - 5vh);
+  top: calc(50% - 5vh);
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 10vh;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.circle-add-image .fa-plus {
+  font-size: 4vh ;
+  color: white;
+}
+
+.product-descr {
+  height: .1rem;
+  /* border-radius: 30px; */
+  border : none;
+  border-bottom : 2px solid black;
+  background-color: white;
+  width: 20em;
+  padding: 4%;
+  color: black;
+  font-size: 2vh;
+}
+
+.titletoadd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

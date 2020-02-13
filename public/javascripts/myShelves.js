@@ -34,9 +34,9 @@ function displayFormWithInfos (infosToDisplay) {
 }
 function displayNewInfos (trucAedit, infosToDisplay) {
   const infoToEdit = trucAedit.querySelector('.infos-placeholder');
-  infoToEdit.querySelector(".display-name").innerHTML = infosToDisplay.data.name
-  infoToEdit.querySelector(".display-description").innerHTML = infosToDisplay.data.description
-  infoToEdit.querySelector(".display-price").innerHTML = infosToDisplay.data.price
+  infoToEdit.querySelector(".display-name").innerHTML = `Item : ${infosToDisplay.data.name}`
+  infoToEdit.querySelector(".display-description").innerHTML = `Description : ${infosToDisplay.data.description}`
+  infoToEdit.querySelector(".display-price").innerHTML = `Price : ${infosToDisplay.data.price}`
 }
 
 editbuttons.forEach(btn => {
@@ -45,7 +45,6 @@ editbuttons.forEach(btn => {
     trucAedit = event.target.closest(".block")
     service.get(`/myshop/get-item-info/${shopId}/${id}`)
     .then(infos => { 
-      console.log(infos)
       document.getElementById('edit-modal').style.display='block';
       displayFormWithInfos(infos)
     }) 
@@ -53,10 +52,12 @@ editbuttons.forEach(btn => {
 
   formEdit.onsubmit = function(event) {
     event.preventDefault();
+    console.log(price);
+    console.log(price.value)
     const newInfos = {description : description.value, name: name.value, price: price.value }
       service.post(`/myshop/edit-item/${shopId}/${id}`, {newInfos}).then(infos=> {
-        console.log(infos);
         displayNewInfos(trucAedit, infos);
+        debugger
         document.getElementById('edit-modal').style.display='none'
       });
     };
