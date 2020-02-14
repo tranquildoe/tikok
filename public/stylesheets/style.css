@@ -671,7 +671,7 @@ a {
   font-size: 3vh;
   color: black;
   justify-content: space-between;
-  margin-top: 10vh;
+  margin-top: 13.5vh;
 }
 
 #startContainer {
@@ -683,6 +683,7 @@ a {
   /* align-content: center; */
   align-items: center;
   /* opacity: 0.5; */
+  padding-top: 16.5vh;
 }
 
 #startMission {
