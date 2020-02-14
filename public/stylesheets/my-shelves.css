@@ -1,5 +1,5 @@
 h1 {
-  font-size: 9vh;
+  font-size: 6vh;
   margin: 3vh 3vh 6vh;
   text-align: center;
 }
@@ -9,6 +9,7 @@ h2 {
 .block {
     background-color: white;
     border:1px solid grey;
+    border-radius: 3vw;
     box-shadow: 2px 2px 2px grey;
     padding: 4%;
     display: flex;
@@ -17,20 +18,35 @@ h2 {
     position: relative
 }
 
+.block:hover {
+  transform: scale(1.09);
+  filter: grayscale(0%);
+}
+
 .display-block {
   width: 40vh;
-  height: 40vh
+  height: 40vh;
+  margin-left: 5vw;
+  margin-bottom: 5vw;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(40vh, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(50vh, 1fr));
     grid-gap: 2vh;
+    margin-bottom: 2vw;
 }
 
 .product-image {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10vw;
+  /* margin-right: 18vh; */
+  height: 10vw;
+  width: 10vw;
+  margin-left: -2vw;
+  margin-top: -2vw;
+
 }
 
 .infos-placeholder {
@@ -274,3 +290,50 @@ select option {
   position: relative;
   height: max-content;
 } */
+
+.myshelvestitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.myshelves123 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+#shelves-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2vw;
+}
+
+.circle {
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+  border: 5px solid tomato;
+  border-radius: 10vh;
+  width: 7vh;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: tomato;
+}
+
+.circle:hover {
+  transform: scale(1.09);
+  filter: grayscale(0%);
+}
+
+
+
+
