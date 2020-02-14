@@ -8,7 +8,7 @@ const shopModel = require("../models/shop");
 const uploadCloud = require("../config/cloudinary");
 const protectRoute = require("./../middlewares/protectPrivateRoute")
 
-router.get("/create-shop/:id", protectRoute, (req, res, next) => {
+router.get("/create-shop/:id", (req, res, next) => {
   shopModel.findById(req.params.id).then(shop =>
     res.render("sellers/createShop", {
       shop,
