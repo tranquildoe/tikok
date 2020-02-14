@@ -566,6 +566,11 @@ a {
 }
 
 /* Shop page while shopping */
+
+#shopSSS {
+  padding-top: 14vh;
+}
+
 #shopNameHolder {
   display: flex;
   align-items: center;
