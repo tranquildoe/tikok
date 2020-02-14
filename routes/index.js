@@ -12,13 +12,11 @@ router.get("/", function(req, res, next) {
 });
 
 router.get("/home", function (req, res, next) {
-  const cust = req.session.currentUser.id
-  Promise.all([shopModel.find().limit(6), customerModel.findById(cust,{"orders.baskets":1})])
+  // if(req.session.currentUser) {const cust = req.session.currentUser.id}
+  shopModel.find().limit(6)
     .then(dbRes => {
-      console.log(dbRes[1])
       res.render("platform/home", {
-        sixShops : dbRes[0],
-        // count_baskets: dbRes[1].length,
+        sixShops : dbRes,
         css: ["home"],
         scripts: ["home"]
       })
@@ -123,14 +121,13 @@ router.get("/shopping/add-to-basket/:shop_id/:item_id", function(req, res, next)
     });
 });
 
-// customerModel.findByIdAndUpdate(, { orders: {$push: {baskets :req.params.item_id }}})
-// .then(dbRes => console.log(dbRes))
-
 router.get("/shopping/category/:cat", function(req, res, next) {
   productModel
     .find({ category: req.params.cat, isTemplate: false })
     .populate("id_shop")
-    .then(products => res.render("platform/category", { products }));
+    .then(products => {
+      console.log(products)
+      res.render("platform/category", { products })});
 });
 
 module.exports = router;

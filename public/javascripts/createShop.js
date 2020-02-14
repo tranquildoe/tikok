@@ -24,7 +24,6 @@ imageFile.onchange = () => {
 
 formCreate.onsubmit = function(event) {
   event.preventDefault();
-  // console.log(imageFile, "value=", imageFile.value)
   const shopInfos = {
     image: imageFile.files[0],
     // type: typeSelect.value,

@@ -18,7 +18,7 @@ const productSchema = new Schema({
   type:String,
   category: {
       type: String,
-      enum : ["fruits", "vegetables", "fishes & seafood", "meats", "artisan goods", "growcery", "other"]
+      enum : ["fruits", "vegetables", "fishes&seafood", "meats", "artisan goods", "growcery", "other"]
   },
   likes :Number,
   image: {

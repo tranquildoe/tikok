@@ -1,8 +1,6 @@
 <header class="dashboard-header">
   <nav class="navbar">
     <div class="logoandtext">
-      {{!-- <img src="/coq.png" alt="imgcoq" class="coqimg"> --}}
-
       <p class="tikoktext">tikok</p>
       <img class="coqimg" alt="imgcoq"
         src="https://res.cloudinary.com/dyvosdvps/image/upload/v1581546572/tikok-pictures/Sans_titre_1_b7shu3.png">
@@ -16,13 +14,6 @@
     </div>
   </nav>
 </header>
-
-
-
-
-
-
-
 <div class="myshelves123">
 <div class="myshelvestitle">
 <h1>My Shelves</h1>
@@ -42,21 +33,6 @@
 </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="grid-container" data-shop-id="{{shop._id}}">
   {{#each shop.list_products}}
   <div class="block display-block">
@@ -64,9 +40,8 @@
     <div class="infos-placeholder">
       <div class="display-name">Item :{{this.name}}</div>
       <div class="display-description">Description :{{this.description}}</div>
-      <div class="display-price">Price :{{this.price}}</div>
-      <div class="display-quantity">Quantity : {{this.quantity}}</div>
-      <div class="display-ref">Reference : {{this.ref}}</divid="display-name">
+      <div class="display-price">Price :{{this.price}}</div>    
+      <div class="display-price">Category :{{this.category}}</div>    
       </div>
       <div class="placeholder-button">
         <button data-item-id="{{this.id}}" class="delete-btn crud-btn"><i class="fas fa-trash-alt"></i>Delete</button>
@@ -97,10 +72,12 @@
     onclick="document.getElementById('edit-modal').style.display='none'">&times;</span>
   <h2 class="form-title">Update Item</h2>
   <form class="edit-content">
-    <div class="imageToUpload">
-      <button class="add-picture"><input id="image" type='file' onchange="readURL(this);"
-          class="input-image" /></button>
-    </div>
+    <div class="image-upload image-container">
+        <label for="file-input">
+          <img id="product-image" src="" width="200">
+        </label>
+        <input class="input" id="file-input" type="file" name="image"}>
+      </div>
     <label for="category" name="category" class="label-name label">Category</label>
     <select id="select" name="category" id="category" class="select input">
       <option value="-1" name="category" disabled selected>Choose a category</option>

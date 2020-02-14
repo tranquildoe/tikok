@@ -2,4 +2,12 @@
 {{>header}}
 {{#each products}}
 <div>{{this.id_shop.name}}</div>
+ <a href="/shopping/shop/{{this.id_shop}}">
+        <div class="shop-block">
+            <img class="image-shop"alt="shop" src="{{this.id_shop.image}}" width="300">
+            <h3>{{this.id_shop.name}}</h3>
+            <p class="description">{{this.id_shop.description}}</p>
+        </div>
+</a>
 {{/each}}
+
