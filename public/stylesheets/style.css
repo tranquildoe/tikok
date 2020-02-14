@@ -524,6 +524,20 @@ a {
 }
 
 /* Shop page while shopping */
+#shopNameHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7vh;
+}
+
+#shopNameSSS {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7vh;
+}
+
 #sShopImg {
   height: auto; 
   width: 22vw; 
@@ -536,7 +550,7 @@ a {
 }
 
 .grid-container {
-  padding-top: 35vh;
+  padding-top: 15vh;
 }
 
 
