@@ -56,6 +56,19 @@ router.post("/myshop/signup", (req, res, next) => {
         const salt = bcrypt.genSaltSync(10); // https://en.wikipedia.org/wiki/Salt_(cryptography)
         const hashed = bcrypt.hashSync(newSeller.password, salt); // generates a secured random hashed password
         newSeller.password = hashed; // new user is ready for db
+
+        // if (bcrypt.compareSync(newSeller.password, dbRes.password)) {
+        //   const {
+        //     _doc: clone
+        //   } = {
+        //     ...dbRes
+        //   };
+        //   delete clone.password;
+          
+        //   // console.log(req.session)
+        //   req.session.currentUser = clone;
+        // }
+
         shopModel.create(newShop)
           .then(shop => {
             newSeller.shop_id = shop.id
@@ -100,6 +113,7 @@ router.post("/myshop/login", (req, res, next) => {
             ...dbRes
           };
           delete clone.password;
+          
           // console.log(req.session)
           req.session.currentUser = clone;
           req.flash("success", "access garanted")
