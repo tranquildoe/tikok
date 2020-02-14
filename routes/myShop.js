@@ -35,7 +35,7 @@ router.post("/create-shop/:id", uploadCloud.single("image"),(req, res, next) => 
   }
 );
 
-router.get("/myshelves/:id", protectRoute, (req, res, next) => {
+router.get("/myshelves/:id", (req, res, next) => {
   
   shopModel
     .findById(req.params.id, { list_products: 1 })
@@ -51,7 +51,7 @@ router.get("/myshelves/:id", protectRoute, (req, res, next) => {
     .catch(next);
 });
 
-router.get("/delete-item/:shop_id/:id", protectRoute, (req, res, next) => {
+router.get("/delete-item/:shop_id/:id", (req, res, next) => {
   console.log("heyyyy");
   const removeShopProduct = shopModel.findByIdAndUpdate(
     req.params.shop_id,
@@ -80,13 +80,13 @@ router.post("/edit-item/:shop_id/:id", (req, res, next) => {
     })
     .catch(next);
 });
-router.get("/get-item-info/:shop_id/:id", protectRoute, (req, res, next) => {
+router.get("/get-item-info/:shop_id/:id", (req, res, next) => {
   productModel
     .findById(req.params.id)
     .then(product => res.json(product))
     .catch(next);
 });
-router.get("/create-item/:shop_id", protectRoute, (req, res, next) => {
+router.get("/create-item/:shop_id", (req, res, next) => {
   shopModel
     .findById(req.params.shop_id)
     .then(shop => res.render("sellers/createItem", { shop, scripts: ['createItem']}));
