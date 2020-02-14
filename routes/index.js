@@ -11,16 +11,16 @@ router.get("/", function(req, res, next) {
   res.render("index");
 });
 
-router.get("/home", function(req, res, next) {
-  shopModel
-    .find()
-    .limit(6)
-    .then(sixShops =>
+router.get("/home", function (req, res, next) {
+  // if(req.session.currentUser) {const cust = req.session.currentUser.id}
+  shopModel.find().limit(6)
+    .then(dbRes => {
       res.render("platform/home", {
-        sixShops,
+        sixShops : dbRes,
         css: ["home"],
         scripts: ["home"]
       })
+    }
     );
 });
 
@@ -49,6 +49,38 @@ router.get("/shopping/shops/api", function(req, res, next) {
     .then(dbRes => res.json(dbRes))
     .catch(next);
 });
+
+// display products of a shop 
+router.get("/shopping/shop/:shop_id", (req, res, next) => {
+  shopModel.findById(req.params.shop_id).populate("list_products")
+    .then(shop => {
+      res.render("platform/shop", {
+        shop
+      })
+    })
+    .catch(next)
+})
+
+router.get("/shopping/shop/:shop_id/:id", (req, res, next) => {
+  console.log("id product ====>" , req.params.id);
+  
+  Promise.all([
+      shopModel.findById(req.params.shop_id).populate("list_products").limit(4),
+      productModel.findById(req.params.id)
+    ])
+    .then(dbRes => {
+      const copy = JSON.parse(JSON.stringify(dbRes[0].list_products))
+      const filteredProducts = copy.filter(p => p._id !== req.params.id);
+
+      res.render("platform/product", {
+        shop: dbRes[0],
+        otherProducts: filteredProducts,
+        product: dbRes[1],
+        scripts: ["product"]})
+
+    })
+    .catch(next)
+})
 
 router.get("/shopping/add-to-basket/:shop_id/:item_id", function(req, res, next) {
   const cust = req.session.currentUser._id;
@@ -89,14 +121,13 @@ router.get("/shopping/add-to-basket/:shop_id/:item_id", function(req, res, next)
     });
 });
 
-// customerModel.findByIdAndUpdate(, { orders: {$push: {baskets :req.params.item_id }}})
-// .then(dbRes => console.log(dbRes))
-
 router.get("/shopping/category/:cat", function(req, res, next) {
   productModel
     .find({ category: req.params.cat, isTemplate: false })
     .populate("id_shop")
-    .then(products => res.render("platform/category", { products }));
+    .then(products => {
+      console.log(products)
+      res.render("platform/category", { products })});
 });
 
 module.exports = router;

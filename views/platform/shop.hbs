@@ -1,26 +1,6 @@
-<header class="dashboard-header">
-  <nav class="navbar">
-    <div class="logoandtext">
-      {{!-- <img src="/coq.png" alt="imgcoq" class="coqimg"> --}}
-
-      <p class="tikoktext">tikok</p>
-      <img class="coqimg" alt="imgcoq"
-        src="https://res.cloudinary.com/dyvosdvps/image/upload/v1581546572/tikok-pictures/Sans_titre_1_b7shu3.png">
-    </div>
-    <div class="navtext">
-      <ul class="navlist">
-        <li><a href="/"> Home </a></li>
-         <li><a href="/home"> Main Shopping Page </a></li>
-        <li><a href="/" > Log Out</a></li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
-
+{{>customerNavBar}}
 {{>header_drawing}}
-
-
+<div id="shopNameSSS">{{shop.name}}</div>
 <div class="grid-container" data-shop-id="{{shop._id}}">
   {{#each shop.list_products}}
     <div class="block display-block">
@@ -29,7 +9,6 @@
         <div class="infos-placeholder" data-item-id="{{this.id}}">
         <div>Item :{{this.name}}</div>
         <div>Price :{{this.price}}</div>
-
         </div>
     </div>
     {{/each}}

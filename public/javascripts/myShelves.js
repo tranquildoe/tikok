@@ -1,6 +1,8 @@
 // const imageFile = document.getElementById("file-input");
 const category = document.getElementById("category");
 const description = document.getElementById("description");
+const productImage = document.getElementById("product-image");
+const imageFile = document.getElementById("file-input");
 const price = document.getElementById("price");
 const name = document.getElementById("name");
  const deleteBtn = document.querySelector(".deletebtn")
@@ -28,15 +30,24 @@ deleteBtn.onclick = function(event) {
       document.getElementById('delete-modal').style.display='none'})
     }
 function displayFormWithInfos (infosToDisplay) {
+  productImage.src = infosToDisplay.data.image
   name.value = infosToDisplay.data.name;
   description.value = infosToDisplay.data.description;
   price.value = infosToDisplay.data.price
 }
+
 function displayNewInfos (trucAedit, infosToDisplay) {
   const infoToEdit = trucAedit.querySelector('.infos-placeholder');
   infoToEdit.querySelector(".display-name").innerHTML = `Item : ${infosToDisplay.data.name}`
   infoToEdit.querySelector(".display-description").innerHTML = `Description : ${infosToDisplay.data.description}`
   infoToEdit.querySelector(".display-price").innerHTML = `Price : ${infosToDisplay.data.price}`
+}
+imageFile.onchange = () => {
+  if(imageFile.files[0]){
+    const tmpUrl = URL.createObjectURL(imageFile.files[0]);
+    console.log(imageFile.files[0])
+    productImage.src = tmpUrl;
+  }
 }
 
 editbuttons.forEach(btn => {

@@ -1,10 +1,20 @@
-<nav>
-    <div class="logo-container">
-        <div><img class="logo-nav" src="https://res.cloudinary.com/dyvosdvps/image/upload/v1581546572/tikok-pictures/Sans_titre_1_b7shu3.png" alt="logo">
-        <p class="nom">tikok</p>
-        </div>
+<header class="dashboard-header">
+  <nav class="navbar">
+    <div class="logoandtext">
+      {{!-- <img src="/coq.png" alt="imgcoq" class="coqimg"> --}}
+
+      <p class="tikoktext">tikok</p>
+      <img class="coqimg" alt="imgcoq"
+        src="https://res.cloudinary.com/dyvosdvps/image/upload/v1581546572/tikok-pictures/Sans_titre_1_b7shu3.png">
     </div>
-    <div>
-        
+    <div class="navtext">
+      <ul class="navlist">
+         <li><a href="/home">Home</a></li>
+         <li><a id="basket-icn" href="/shopping/mybasket"><i class="fas fa-shopping-basket"></i>
+         <div id="basket-notification">{{count_baskets}}</div>
+         </a></li>
+        <li><a href="/" > Log Out</a></li>
+      </ul>
     </div>
-</nav>
+  </nav>
+</header>

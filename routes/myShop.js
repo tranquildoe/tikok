@@ -89,19 +89,22 @@ router.get("/get-item-info/:shop_id/:id", protectRoute, (req, res, next) => {
 router.get("/create-item/:shop_id", protectRoute, (req, res, next) => {
   shopModel
     .findById(req.params.shop_id)
-    .then(shop => res.render("sellers/createItem", { shop }));
+    .then(shop => res.render("sellers/createItem", { shop, scripts: ['createItem']}));
 });
 
-router.post("/create-item/:shop_id", protectRoute, (req, res, next) => {
-  const { category, name, price, description } = req.body;
-  productModel
-    .create({
+router.post("/create-item/:shop_id",uploadCloud.single("image"), (req, res, next) => {
+  console.log(req)
+  const {category, name, price, description } = req.body;
+  const newItem = {
       category,
       name,
       price,
       description,
-      id_shop: req.params.shop_id
-    })
+    };
+  newItem.id_shop = req.params.shop_id;
+  if (req.file) newItem.image = req.file.url;
+  productModel
+  .create(newItem)
     .then(createdProduct => {
       shopModel
         .findByIdAndUpdate(req.params.shop_id, {
