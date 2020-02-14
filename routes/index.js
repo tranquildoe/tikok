@@ -11,16 +11,18 @@ router.get("/", function(req, res, next) {
   res.render("index");
 });
 
-router.get("/home", function(req, res, next) {
-  shopModel
-    .find()
-    .limit(6)
-    .then(sixShops =>
+router.get("/home", function (req, res, next) {
+  const cust = req.session.currentUser.id
+  Promise.all([shopModel.find().limit(6), customerModel.findById(cust,{"orders.baskets":1})])
+    .then(dbRes => {
+      console.log(dbRes[1])
       res.render("platform/home", {
-        sixShops,
+        sixShops : dbRes[0],
+        // count_baskets: dbRes[1].length,
         css: ["home"],
         scripts: ["home"]
       })
+    }
     );
 });
 
@@ -49,6 +51,38 @@ router.get("/shopping/shops/api", function(req, res, next) {
     .then(dbRes => res.json(dbRes))
     .catch(next);
 });
+
+// display products of a shop 
+router.get("/shopping/shop/:shop_id", (req, res, next) => {
+  shopModel.findById(req.params.shop_id).populate("list_products")
+    .then(shop => {
+      res.render("platform/shop", {
+        shop
+      })
+    })
+    .catch(next)
+})
+
+router.get("/shopping/shop/:shop_id/:id", (req, res, next) => {
+  console.log("id product ====>" , req.params.id);
+  
+  Promise.all([
+      shopModel.findById(req.params.shop_id).populate("list_products").limit(4),
+      productModel.findById(req.params.id)
+    ])
+    .then(dbRes => {
+      const copy = JSON.parse(JSON.stringify(dbRes[0].list_products))
+      const filteredProducts = copy.filter(p => p._id !== req.params.id);
+
+      res.render("platform/product", {
+        shop: dbRes[0],
+        otherProducts: filteredProducts,
+        product: dbRes[1],
+        scripts: ["product"]})
+
+    })
+    .catch(next)
+})
 
 router.get("/shopping/add-to-basket/:shop_id/:item_id", function(req, res, next) {
   const cust = req.session.currentUser._id;

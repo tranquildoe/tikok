@@ -35,8 +35,6 @@ const martinique = {
                   
                   document.getElementById('latitude').value = results[0].geometry.location.lat();
                   document.getElementById('longitude').value = results[0].geometry.location.lng();
-                } else {
-                  alert(i);
                 }
               }
             )
