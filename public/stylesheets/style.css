@@ -270,8 +270,22 @@ a {
   color: black;
   font-size: 5vh;
   /* margin-bottom: ; */
-
 }
+
+/* .inputsignup[type="text"]
+{
+    font-size:15px;
+}
+
+.inputsignup[type="email"]
+{
+    font-size:15px;
+}
+
+.inputsignup[type="password"]
+{
+    font-size:15px;
+} */
 
 .inputsignup::placeholder {
   color: grey;
